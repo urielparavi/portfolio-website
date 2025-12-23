@@ -5,13 +5,18 @@ import { FadeIn } from "@/components/fade-in";
 
 export function HeroSection() {
   return (
-    <section className="relative py-20 md:py-32">
+    <section className="relative py-20 md:py-32 overflow-hidden">
+      {/* Subtle animated gradient background */}
+      <div className="absolute inset-0 gradient-bg-2 -z-10" />
+      
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn delay={100}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               פיתוח אתרים מותאמים אישית
-              <span className="text-primary"> לעסק שלך</span>
+              <span className="block mt-2 gradient-text">
+                לעסק שלך
+              </span>
             </h1>
           </FadeIn>
           

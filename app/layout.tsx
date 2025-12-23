@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Heebo } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
+import { GoogleAnalytics } from '@/components/google-analytics';
 
 const heebo = Heebo({
   subsets: ['hebrew', 'latin'],
@@ -78,6 +79,9 @@ export default function RootLayout({
         <link rel="canonical" href="https://www.uriel-sites.com" />
       </head>
       <body className={heebo.className}>
+        {process.env.NODE_ENV === 'production' && (
+          <GoogleAnalytics measurementId="G-DRQV5MQ7CV" />
+        )}
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
