@@ -8,6 +8,8 @@ import { StructuredData } from "@/components/structured-data";
 import { Process } from "@/components/process";
 import { Testimonials } from "@/components/testimonials";
 import { FAQ } from "@/components/faq";
+import { Skills } from "@/components/skills";
+import { TechStack } from "@/components/tech-stack";
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
         <HeroSection />
         <StatsSection />
         <WhyChooseMe />
+        <Skills />
+        <TechStack />
         <Process />
         <ImageCarousel />
         <Testimonials />
