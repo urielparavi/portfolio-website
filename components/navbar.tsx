@@ -40,7 +40,7 @@ export function Navbar() {
               alt="Weby Logo"
               width={40}
               height={40}
-              className="object-contain"
+              className="object-contain rounded-sm"
               priority
             />
             <span className="text-xl font-bold gradient-text hover:gradient-text-vibrant">

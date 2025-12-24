@@ -25,11 +25,11 @@ import { FadeIn } from '@/components/fade-in';
 export const metadata: Metadata = {
   title: 'אודות - הסיפור שלי',
   description:
-    'היי, אני אוריאל - מפתח Full Stack עם 7+ שנות ניסיון בבניית אתרים ואפליקציות מתקדמות. למד עוד על המסע, הטכנולוגיות והגישה שלי.',
+    'היי, אני אוריאל - מפתח Full Stack עם 7+ שנות ניסיון בבניית אתרים ואפליקציות מתקדמות. מתמחה ב-React, Next.js, Node.js ופיתוח AI.',
   openGraph: {
     title: 'אודות - אוריאל בניית אתרים',
     description:
-      'הכירו את אוריאל - מפתח Full Stack עם 7+ שנות ניסיון בבניית אתרים מקצועיים',
+      'הכירו את אוריאל - מפתח Full Stack עם 7+ שנות ניסיון. מתמחה ב-React, Next.js, AI ו-E-commerce.',
   },
 };
 
@@ -158,7 +158,6 @@ export default function AboutPage() {
       <Navbar />
       <main className="min-h-screen py-20">
         <div className="container mx-auto px-4">
-          {/* Hero Section */}
           <div className="max-w-5xl mx-auto mb-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <FadeIn>
@@ -172,19 +171,20 @@ export default function AboutPage() {
                       <span className="font-semibold text-foreground">
                         Full Stack
                       </span>{' '}
-                      עם למעלה מ-7 שנות ניסיון בבניית אתרים ואפליקציות מתקדמות.
+                      עם למעלה מ-7 שנות ניסיון בבניית אתרים ואפליקציות web
+                      מתקדמות.
                     </p>
                     <p>
-                      אני אוהב להפוך רעיונות למציאות דיגיטלית - מאתרי נחיתה
-                      פשוטים ועד מערכות מורכבות עם AI, Blockchain ו-E-commerce
-                      מתקדם.
+                      מתמחה ב-React, Next.js, Node.js ופיתוח AI - מאתרי נחיתה
+                      ועד מערכות E-commerce מורכבות, צ'אטבוטים חכמים ופתרונות
+                      Blockchain.
                     </p>
                     <p>
-                      המטרה שלי היא לבנות פתרונות שלא רק נראים טוב, אלא גם{' '}
+                      הגישה שלי: קוד נקי,{' '}
                       <span className="font-semibold text-foreground">
-                        עובדים מצוין
+                        ביצועים מהירים
                       </span>
-                      , טעינים מהר, ומביאים תוצאות אמיתיות.
+                      , וחווית משתמש שמביאה תוצאות אמיתיות.
                     </p>
                   </div>
                 </div>
@@ -207,7 +207,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Technologies Section */}
           <FadeIn delay={150}>
             <div className="max-w-6xl mx-auto mb-20">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -249,7 +248,6 @@ export default function AboutPage() {
                 ))}
               </div>
 
-              {/* Additional Technologies */}
               <FadeIn delay={200}>
                 <div className="mt-8 text-center">
                   <p className="text-sm text-muted-foreground mb-3">
@@ -267,7 +265,6 @@ export default function AboutPage() {
             </div>
           </FadeIn>
 
-          {/* Timeline */}
           <FadeIn delay={250}>
             <div className="max-w-4xl mx-auto mb-20">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -281,7 +278,6 @@ export default function AboutPage() {
                 {timeline.map((item, index) => (
                   <FadeIn key={index} delay={index * 100} direction="right">
                     <div className="relative">
-                      {/* Connection line */}
                       {index < timeline.length - 1 && (
                         <div className="absolute right-10 top-20 w-0.5 h-full bg-gradient-to-b from-primary to-primary/20 -z-10" />
                       )}
@@ -294,7 +290,6 @@ export default function AboutPage() {
                           </div>
                         </div>
 
-                        {/* Content */}
                         <Card className="flex-1 hover-lift hover-shadow-medium transition-all duration-300">
                           <CardContent className="pt-6">
                             <div className="flex items-center gap-3 mb-3">
@@ -318,7 +313,6 @@ export default function AboutPage() {
             </div>
           </FadeIn>
 
-          {/* Values */}
           <FadeIn delay={300}>
             <div className="max-w-5xl mx-auto mb-20">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -344,7 +338,6 @@ export default function AboutPage() {
             </div>
           </FadeIn>
 
-          {/* Contact CTA */}
           <FadeIn delay={400}>
             <div className="max-w-3xl mx-auto text-center">
               <Card className="shadow-medium">
