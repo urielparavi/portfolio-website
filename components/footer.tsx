@@ -129,7 +129,8 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-sm text-muted-foreground">
           <p className="flex items-center gap-1">
-            © {currentYear} אוריאל - בניית אתרים. כל הזכויות שמורות.
+            © {currentYear} אוריאל - פיתוח תוכנה, בניית אתרים ואפליקציות. כל
+            הזכויות שמורות.
           </p>
         </div>
       </div>

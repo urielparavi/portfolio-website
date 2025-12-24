@@ -1,18 +1,19 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { Menu, X } from 'lucide-react';
+import { ThemeToggle } from '@/components/theme-toggle';
+import Image from 'next/image';
 
 const navLinks = [
-  { href: "/", label: "בית" },
-  { href: "/services", label: "שירותים" },
-  { href: "/portfolio", label: "אתרים שבניתי" },
-  { href: "/about", label: "אודות" },
-  { href: "/contact", label: "צור קשר" },
+  { href: '/', label: 'בית' },
+  { href: '/services', label: 'שירותים' },
+  { href: '/portfolio', label: 'אתרים שבניתי' },
+  { href: '/about', label: 'אודות' },
+  { href: '/contact', label: 'צור קשר' },
 ];
 
 export function Navbar() {
@@ -20,8 +21,8 @@ export function Navbar() {
   const pathname = usePathname();
 
   const isActive = (href: string) => {
-    if (href === "/") {
-      return pathname === "/";
+    if (href === '/') {
+      return pathname === '/';
     }
     return pathname.startsWith(href);
   };
@@ -31,8 +32,21 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold gradient-text hover:gradient-text-vibrant transition-all">
-            אוריאל
+          <Link
+            href="/"
+            className="flex items-center gap-2 transition-all hover:opacity-80"
+          >
+            <Image
+              src="/logo.png"
+              alt="Weby Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+              priority
+            />
+            <span className="text-xl font-bold gradient-text hover:gradient-text-vibrant">
+              Weby
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -43,14 +57,20 @@ export function Navbar() {
                 href={link.href}
                 className="relative px-4 py-2 text-sm font-medium transition-colors hover:text-primary rounded-md group outline-none"
               >
-                <span className={isActive(link.href) ? "text-primary" : "text-muted-foreground"}>
+                <span
+                  className={
+                    isActive(link.href)
+                      ? 'text-primary'
+                      : 'text-muted-foreground'
+                  }
+                >
                   {link.label}
                 </span>
-                
+
                 {/* Active indicator - animated underline */}
                 <span
-                  className={`absolute bottom-0 right-0 h-0.5 bg-primary transition-all duration-300 ${
-                    isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
+                  className={`absolute bottom-0 right-0 h-0.5 bg-primary transition-all duration-500 ease-in-out ${
+                    isActive(link.href) ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
               </Link>
@@ -72,10 +92,14 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? "סגור תפריט" : "פתח תפריט"}
+              aria-label={isOpen ? 'סגור תפריט' : 'פתח תפריט'}
               aria-expanded={isOpen}
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -90,19 +114,19 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all relative overflow-hidden outline-none ${
                   isActive(link.href)
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                 }`}
               >
                 {link.label}
-                
+
                 {/* Active indicator for mobile - right border */}
                 {isActive(link.href) && (
                   <span className="absolute right-0 top-0 h-full w-1 bg-primary rounded-r" />
                 )}
               </Link>
             ))}
-            
+
             <div className="pt-4">
               <Button asChild className="w-full hover-lift">
                 <Link href="/contact" onClick={() => setIsOpen(false)}>

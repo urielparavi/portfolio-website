@@ -7,6 +7,7 @@ import { BackToTop } from '@/components/back-to-top';
 import { ScrollProgressBar } from '@/components/scroll-progress';
 import { PageLoadingIndicator } from '@/components/page-loading-indicator';
 import { Toaster } from '@/components/toaster';
+import { CountdownBanner } from '@/components/countdown-banner';
 
 const heebo = Heebo({
   subsets: ['hebrew', 'latin'],
@@ -86,25 +87,21 @@ export default function RootLayout({
         {process.env.NODE_ENV === 'production' && (
           <GoogleAnalytics measurementId="G-XXXXXXXXXX" />
         )}
-        
+
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          {/* Scroll Progress Bar */}
+          <CountdownBanner />
           <ScrollProgressBar />
-          
-          {/* Page Loading Indicator */}
           <PageLoadingIndicator />
-          
+
           {children}
-          
-          {/* Back to Top Button */}
+
           <BackToTop />
-          
-          {/* Toast Notifications */}
+
           <Toaster />
         </ThemeProvider>
       </body>

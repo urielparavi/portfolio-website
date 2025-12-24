@@ -1,91 +1,123 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-import { FadeIn } from "@/components/fade-in";
+import { useState } from 'react';
+import Image from 'next/image';
+import { Navbar } from '@/components/navbar';
+import { Footer } from '@/components/footer';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { FadeIn } from '@/components/fade-in';
 
 const projects = [
   {
     id: 1,
+    image: '/projects/ai-chatbot.jpg',
     title: "צ'אטבוט AI חכם עם חיפוש סמנטי",
-    description: "מערכת צ'אטבוט מתקדמת המבצעת חיפוש סמנטי במסמכים שהועלו על ידי המשתמש, משלבת AI ופייתון עם טכנולוגיות web.",
-    technologies: ["Python", "AI", "OpenAI SDK", "RAG"],
-    category: "Backend",
-    year: "2025",
+    description:
+      "מערכת צ'אטבוט מתקדמת המבצעת חיפוש סמנטי במסמכים שהועלו על ידי המשתמש, משלבת AI ופייתון עם טכנולוגיות web.",
+    technologies: ['Python', 'AI', 'OpenAI SDK', 'RAG'],
+    category: 'Backend',
+    year: '2025',
+    link: '#', // הוסף קישור אם יש
   },
   {
     id: 2,
-    title: "מערכת Blockchain ומטבע קריפטו",
-    description: "פרויקט מעשי שבו בניתי מערכת Blockchain ומטבע קריפטו מלאה באמצעות Python מהבסיס.",
-    technologies: ["Python", "Blockchain", "Cryptocurrency"],
-    category: "Backend",
-    year: "2025",
+    image: '/projects/blockchain.jpg',
+    title: 'מערכת Blockchain ומטבע קריפטו',
+    description:
+      'פרויקט מעשי שבו בניתי מערכת Blockchain ומטבע קריפטו מלאה באמצעות Python מהבסיס.',
+    technologies: ['Python', 'Blockchain', 'Cryptocurrency'],
+    category: 'Backend',
+    year: '2025',
+    link: '#',
   },
   {
     id: 3,
-    title: "NextCart - פלטפורמת E-commerce",
-    description: "פלטפורמת סחר אלקטרוני מתקדמת הבנויה עם Next.js, TypeScript ו-PostgreSQL, כוללת תשלומים, פאנל ניהול ואימות מלא.",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Payments"],
-    category: "Full Stack",
-    year: "2025",
+    image: '/projects/nextcart.jpg',
+    title: 'NextCart - פלטפורמת E-commerce',
+    description:
+      'פלטפורמת סחר אלקטרוני מתקדמת הבנויה עם Next.js, TypeScript ו-PostgreSQL, כוללת תשלומים, פאנל ניהול ואימות מלא.',
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Payments'],
+    category: 'Full Stack',
+    year: '2025',
+    link: '#',
   },
   {
     id: 4,
-    title: "Cozy - חנות אונליין מודרנית",
-    description: "עיין במבצעים בלעדיים והגעות אחרונות. חווית קנייה חלקה ואמינה עם מוצרים איכותיים המיועדים לנוחות וסטייל.",
-    technologies: ["React", "E-commerce", "UI/UX"],
-    category: "Frontend",
-    year: "2024",
+    image: '/projects/cozy.jpg',
+    title: 'Cozy - חנות אונליין מודרנית',
+    description:
+      'עיין במבצעים בלעדיים והגעות אחרונות. חווית קנייה חלקה ואמינה עם מוצרים איכותיים המיועדים לנוחות וסטייל.',
+    technologies: ['React', 'E-commerce', 'UI/UX'],
+    category: 'Frontend',
+    year: '2024',
+    link: '#',
   },
   {
     id: 5,
-    title: "FocusFlow - אפליקציית פוקוס",
-    description: "אפליקציית טיימר מינימליסטית שנועדה לעזור למשתמשים לשפר ריכוז באמצעות טכניקת Pomodoro.",
-    technologies: ["React", "Timer", "Productivity"],
-    category: "Frontend",
-    year: "2024",
+    image: '/projects/focusflow.jpg',
+    title: 'FocusFlow - אפליקציית פוקוס',
+    description:
+      'אפליקציית טיימר מינימליסטית שנועדה לעזור למשתמשים לשפר ריכוז באמצעות טכניקת Pomodoro.',
+    technologies: ['React', 'Timer', 'Productivity'],
+    category: 'Frontend',
+    year: '2024',
+    link: '#',
   },
   {
     id: 6,
-    title: "Natours - אתר הזמנת טיולים",
-    description: "אתר הזמנת טיולים מעוצב להפליא הבנוי עם טכנולוגיות frontend מודרניות, עם דגש על חוויית משתמש ועיצוב רספונסיבי.",
-    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-    category: "Frontend",
-    year: "2023",
+    image: '/projects/natours.jpg',
+    title: 'Natours - אתר הזמנת טיולים',
+    description:
+      'אתר הזמנת טיולים מעוצב להפליא הבנוי עם טכנולוגיות frontend מודרניות, עם דגש על חוויית משתמש ועיצוב רספונסיבי.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+    category: 'Frontend',
+    year: '2023',
+    link: '#',
   },
   {
     id: 7,
-    title: "Jobify - מערכת ניהול חיפוש עבודה",
-    description: "אפליקציה לניהול וארגון חיפוש עבודה, מסייעת למשתמשים לארגן את חיפוש העבודה ביעילות עם דשבורד נקי ויכולות חזקות.",
-    technologies: ["React", "Dashboard", "Job Tracking"],
-    category: "Full Stack",
-    year: "2022",
+    image: '/projects/jobify.jpg',
+    title: 'Jobify - מערכת ניהול חיפוש עבודה',
+    description:
+      'אפליקציה לניהול וארגון חיפוש עבודה, מסייעת למשתמשים לארגן את חיפוש העבודה ביעילות עם דשבורד נקי ויכולות חזקות.',
+    technologies: ['React', 'Dashboard', 'Job Tracking'],
+    category: 'Full Stack',
+    year: '2022',
+    link: '#',
   },
   {
     id: 8,
-    title: "Tailwind Shoes - תבנית חנות נעליים",
-    description: "תבנית אלגנטית המופעלת על ידי Tailwind CSS להצגה ומכירה של נעליים אונליין, כוללת עיצוב רספונסיבי וקומפוננטות UI נקיות.",
-    technologies: ["Tailwind CSS", "Template", "E-commerce"],
-    category: "Frontend",
-    year: "2021",
+    image: '/projects/tailwind-shoes.jpg',
+    title: 'Tailwind Shoes - תבנית חנות נעליים',
+    description:
+      'תבנית אלגנטית המופעלת על ידי Tailwind CSS להצגה ומכירה של נעליים אונליין, כוללת עיצוב רספונסיבי וקומפוננטות UI נקיות.',
+    technologies: ['Tailwind CSS', 'Template', 'E-commerce'],
+    category: 'Frontend',
+    year: '2021',
+    link: '#',
   },
 ];
 
 const ITEMS_PER_PAGE = 6;
-const categories = ["הכל", "Frontend", "Backend", "Full Stack"];
+const categories = ['הכל', 'Frontend', 'Backend', 'Full Stack'];
 
 export default function PortfolioPage() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState("הכל");
+  const [selectedCategory, setSelectedCategory] = useState('הכל');
 
-  const filteredProjects = selectedCategory === "הכל" 
-    ? projects 
-    : projects.filter(p => p.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === 'הכל'
+      ? projects
+      : projects.filter((p) => p.category === selectedCategory);
 
   const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -120,7 +152,9 @@ export default function PortfolioPage() {
               {categories.map((category) => (
                 <Button
                   key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
+                  variant={
+                    selectedCategory === category ? 'default' : 'outline'
+                  }
                   onClick={() => handleCategoryChange(category)}
                   className="hover-lift"
                 >
@@ -134,16 +168,17 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
             {currentProjects.map((project, index) => (
               <FadeIn key={project.id} delay={index * 50} direction="up">
-                <Card className="h-full hover-lift hover-shadow-medium transition-all duration-300 group">
-                  {/* Image placeholder with gradient */}
-                  <div className="aspect-video bg-gradient-to-br from-primary/10 via-primary/5 to-background rounded-t-lg flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="text-center text-muted-foreground z-10">
-                      <div className="text-5xl mb-2">🖼️</div>
-                      <p className="text-sm font-medium">תמונת פרויקט {project.id}</p>
-                    </div>
-                    
-                    {/* Overlay on hover */}
+                <Card className="h-full hover-lift hover-shadow-medium transition-all duration-300 group overflow-hidden">
+                  {/* Image Container */}
+                  <div className="relative aspect-video overflow-hidden bg-muted">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+
                     <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="text-primary-foreground">
                         <ExternalLink className="h-8 w-8" />
@@ -194,17 +229,19 @@ export default function PortfolioPage() {
                 </Button>
 
                 <div className="flex items-center gap-2">
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                    <Button
-                      key={page}
-                      variant={currentPage === page ? "default" : "outline"}
-                      size="icon"
-                      onClick={() => setCurrentPage(page)}
-                      className="hover-lift"
-                    >
-                      {page}
-                    </Button>
-                  ))}
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                    (page) => (
+                      <Button
+                        key={page}
+                        variant={currentPage === page ? 'default' : 'outline'}
+                        size="icon"
+                        onClick={() => setCurrentPage(page)}
+                        className="hover-lift"
+                      >
+                        {page}
+                      </Button>
+                    )
+                  )}
                 </div>
 
                 <Button
