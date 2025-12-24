@@ -9,13 +9,13 @@ export function Footer() {
   const socialLinks = [
     {
       name: 'GitHub',
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/urielparavi',
       icon: Github,
       ariaLabel: 'GitHub Profile',
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/yourusername',
+      href: 'https://linkedin.com/in/uriel-paravi',
       icon: Linkedin,
       ariaLabel: 'LinkedIn Profile',
     },

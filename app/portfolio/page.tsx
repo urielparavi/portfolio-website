@@ -26,10 +26,21 @@ const projects = [
     technologies: ['Python', 'AI', 'OpenAI SDK', 'RAG'],
     category: 'Backend',
     year: '2025',
-    link: '#', // הוסף קישור אם יש
+    link: '#',
   },
   {
     id: 2,
+    image: '/projects/recipe-bot.jpg',
+    title: "צ'אטבוט מודלה - מתכונים ליצירת אוכל",
+    description:
+      "צ'אטבוט שמספק מתכונים מלאים – כולל מרכיבים, כמויות, שלבי הכנה וזמן הכנה – לכל מנה שתבחר, בצורה אינטראקטיבית ונוחה.",
+    technologies: ['Next.js', 'AI', 'OpenAI SDK', 'Chatbot', 'Recipes'],
+    category: 'Full Stack',
+    year: '2025',
+    link: '#',
+  },
+  {
+    id: 3,
     image: '/projects/blockchain.jpg',
     title: 'מערכת Blockchain ומטבע קריפטו',
     description:
@@ -40,7 +51,7 @@ const projects = [
     link: '#',
   },
   {
-    id: 3,
+    id: 4,
     image: '/projects/nextcart.jpg',
     title: 'NextCart - פלטפורמת E-commerce',
     description:
@@ -51,7 +62,7 @@ const projects = [
     link: '#',
   },
   {
-    id: 4,
+    id: 5,
     image: '/projects/cozy.jpg',
     title: 'Cozy - חנות אונליין מודרנית',
     description:
@@ -62,7 +73,7 @@ const projects = [
     link: '#',
   },
   {
-    id: 5,
+    id: 6,
     image: '/projects/focusflow.jpg',
     title: 'FocusFlow - אפליקציית פוקוס',
     description:
@@ -73,7 +84,7 @@ const projects = [
     link: '#',
   },
   {
-    id: 6,
+    id: 7,
     image: '/projects/natours.jpg',
     title: 'Natours - אתר הזמנת טיולים',
     description:
@@ -84,7 +95,7 @@ const projects = [
     link: '#',
   },
   {
-    id: 7,
+    id: 8,
     image: '/projects/jobify.jpg',
     title: 'Jobify - מערכת ניהול חיפוש עבודה',
     description:
@@ -95,7 +106,7 @@ const projects = [
     link: '#',
   },
   {
-    id: 8,
+    id: 9,
     image: '/projects/tailwind-shoes.jpg',
     title: 'Tailwind Shoes - תבנית חנות נעליים',
     description:
