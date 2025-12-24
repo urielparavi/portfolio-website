@@ -10,14 +10,24 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: "React & Next.js", level: 95, category: "Frontend" },
+  // Frontend
+  { name: "JavaScript", level: 90, category: "Frontend" },
   { name: "TypeScript", level: 90, category: "Frontend" },
+  { name: "React & Next.js", level: 95, category: "Frontend" },
   { name: "Tailwind CSS", level: 95, category: "Frontend" },
+  
+  // Backend
   { name: "Node.js", level: 85, category: "Backend" },
   { name: "MongoDB", level: 80, category: "Backend" },
+  { name: "PostgreSQL", level: 75, category: "Backend" },
   { name: "Python", level: 85, category: "Backend" },
+  
+  // DevOps
   { name: "Docker", level: 75, category: "DevOps" },
   { name: "Git & GitHub", level: 90, category: "DevOps" },
+  
+  // AI & Tools
+  { name: "OpenAI & AI", level: 85, category: "AI & Tools" },
 ];
 
 function SkillBar({ skill, delay }: { skill: Skill; delay: number }) {
@@ -80,7 +90,7 @@ export function Skills() {
         </FadeIn>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {categories.map((category, catIndex) => (
               <FadeIn key={category} delay={catIndex * 100}>
                 <div className="space-y-4">
