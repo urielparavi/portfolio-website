@@ -191,7 +191,7 @@ export default function AboutPage() {
               </FadeIn>
 
               <FadeIn delay={100} direction="left">
-                <div className="aspect-square rounded-2xl p-1 bg-gradient-to-br from-primary via-purple-500 to-pink-500 shadow-strong hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="aspect-square rounded-2xl p-1 bg-gradient-to-br from-blue-500 via-blue-300 to-blue-100 shadow-strong hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <div className="w-full h-full rounded-xl overflow-hidden">
                     <Image
                       src="/profile.jpg"
@@ -283,7 +283,6 @@ export default function AboutPage() {
                       )}
 
                       <div className="flex gap-6 items-start group">
-                        {/* Icon */}
                         <div className="relative shrink-0">
                           <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110 shadow-soft">
                             <item.icon className={`h-10 w-10 ${item.color}`} />
