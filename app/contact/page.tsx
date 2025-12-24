@@ -1,49 +1,55 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Mail, Phone, Loader2, CheckCircle2, XCircle, Clock, MessageCircle } from "lucide-react";
-import { FadeIn } from "@/components/fade-in";
+import { useState } from 'react';
+import { Navbar } from '@/components/navbar';
+import { Footer } from '@/components/footer';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { Mail, Phone, Loader2, Clock, MessageCircle } from 'lucide-react';
+import { FadeIn } from '@/components/fade-in';
+import { toast } from 'sonner';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
-  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "שם מלא הוא שדה חובה";
+      newErrors.name = 'שם מלא הוא שדה חובה';
     } else if (formData.name.trim().length < 2) {
-      newErrors.name = "שם חייב להכיל לפחות 2 תווים";
+      newErrors.name = 'שם חייב להכיל לפחות 2 תווים';
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "אימייל הוא שדה חובה";
+      newErrors.email = 'אימייל הוא שדה חובה';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "אנא הכנס כתובת אימייל תקינה";
+      newErrors.email = 'אנא הכנס כתובת אימייל תקינה';
     }
 
     if (formData.phone && !/^[\d\s\-\+\(\)]+$/.test(formData.phone)) {
-      newErrors.phone = "מספר טלפון לא תקין";
+      newErrors.phone = 'מספר טלפון לא תקין';
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "הודעה היא שדה חובה";
+      newErrors.message = 'הודעה היא שדה חובה';
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = "ההודעה חייבת להכיל לפחות 10 תווים";
+      newErrors.message = 'ההודעה חייבת להכיל לפחות 10 תווים';
     }
 
     setErrors(newErrors);
@@ -52,39 +58,30 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
+      toast.error('אנא תקן את השגיאות בטופס');
       return;
     }
 
     setIsLoading(true);
-    setStatus(null);
 
     try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        setStatus({ 
-          type: "success", 
-          message: "ההודעה נשלחה בהצלחה! אחזור אליך בהקדם האפשרי." 
-        });
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        toast.success('ההודעה נשלחה בהצלחה! אחזור אליך בהקדם.');
+        setFormData({ name: '', email: '', phone: '', message: '' });
         setErrors({});
       } else {
-        setStatus({ 
-          type: "error", 
-          message: "אירעה שגיאה בשליחת ההודעה. אנא נסה שוב או צור קשר ישירות." 
-        });
+        toast.error('אירעה שגיאה בשליחת ההודעה. אנא נסה שוב.');
       }
     } catch (error) {
-      setStatus({ 
-        type: "error", 
-        message: "אירעה שגיאה בשליחת ההודעה. אנא בדוק את החיבור לאינטרנט ונסה שוב." 
-      });
+      toast.error('אירעה שגיאה בשליחת ההודעה. אנא בדוק את החיבור לאינטרנט.');
     } finally {
       setIsLoading(false);
     }
@@ -93,7 +90,7 @@ export default function ContactPage() {
   const handleChange = (field: string, value: string) => {
     setFormData({ ...formData, [field]: value });
     if (errors[field]) {
-      setErrors({ ...errors, [field]: "" });
+      setErrors({ ...errors, [field]: '' });
     }
   };
 
@@ -126,131 +123,158 @@ export default function ContactPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                    <form
+                      onSubmit={handleSubmit}
+                      className="space-y-4"
+                      noValidate
+                    >
                       <div>
-                        <label 
-                          htmlFor="name" 
+                        <label
+                          htmlFor="name"
                           className="block text-sm font-medium mb-2"
                         >
-                          שם מלא <span className="text-red-500" aria-label="שדה חובה">*</span>
+                          שם מלא{' '}
+                          <span className="text-red-500" aria-label="שדה חובה">
+                            *
+                          </span>
                         </label>
                         <Input
                           id="name"
                           type="text"
                           placeholder="איך קוראים לך?"
                           value={formData.name}
-                          onChange={(e) => handleChange("name", e.target.value)}
+                          onChange={(e) => handleChange('name', e.target.value)}
                           aria-required="true"
                           aria-invalid={!!errors.name}
-                          aria-describedby={errors.name ? "name-error" : undefined}
-                          className={errors.name ? "border-red-500" : ""}
+                          aria-describedby={
+                            errors.name ? 'name-error' : undefined
+                          }
+                          className={errors.name ? 'border-red-500' : ''}
                         />
                         {errors.name && (
-                          <p id="name-error" className="text-sm text-red-500 mt-1" role="alert">
+                          <p
+                            id="name-error"
+                            className="text-sm text-red-500 mt-1"
+                            role="alert"
+                          >
                             {errors.name}
                           </p>
                         )}
                       </div>
 
                       <div>
-                        <label 
-                          htmlFor="email" 
+                        <label
+                          htmlFor="email"
                           className="block text-sm font-medium mb-2"
                         >
-                          אימייל <span className="text-red-500" aria-label="שדה חובה">*</span>
+                          אימייל{' '}
+                          <span className="text-red-500" aria-label="שדה חובה">
+                            *
+                          </span>
                         </label>
                         <Input
                           id="email"
                           type="email"
                           placeholder="your@email.com"
                           value={formData.email}
-                          onChange={(e) => handleChange("email", e.target.value)}
+                          onChange={(e) =>
+                            handleChange('email', e.target.value)
+                          }
                           aria-required="true"
                           aria-invalid={!!errors.email}
-                          aria-describedby={errors.email ? "email-error" : undefined}
-                          className={errors.email ? "border-red-500" : ""}
+                          aria-describedby={
+                            errors.email ? 'email-error' : undefined
+                          }
+                          className={errors.email ? 'border-red-500' : ''}
                         />
                         {errors.email && (
-                          <p id="email-error" className="text-sm text-red-500 mt-1" role="alert">
+                          <p
+                            id="email-error"
+                            className="text-sm text-red-500 mt-1"
+                            role="alert"
+                          >
                             {errors.email}
                           </p>
                         )}
                       </div>
 
                       <div>
-                        <label 
-                          htmlFor="phone" 
+                        <label
+                          htmlFor="phone"
                           className="block text-sm font-medium mb-2"
                         >
-                          טלפון <span className="text-sm text-muted-foreground">(אופציונלי)</span>
+                          טלפון{' '}
+                          <span className="text-sm text-muted-foreground">
+                            (אופציונלי)
+                          </span>
                         </label>
                         <Input
                           id="phone"
                           type="tel"
                           placeholder="050-1234567"
                           value={formData.phone}
-                          onChange={(e) => handleChange("phone", e.target.value)}
+                          onChange={(e) =>
+                            handleChange('phone', e.target.value)
+                          }
                           aria-invalid={!!errors.phone}
-                          aria-describedby={errors.phone ? "phone-error" : undefined}
-                          className={errors.phone ? "border-red-500" : ""}
+                          aria-describedby={
+                            errors.phone ? 'phone-error' : undefined
+                          }
+                          className={errors.phone ? 'border-red-500' : ''}
                         />
                         {errors.phone && (
-                          <p id="phone-error" className="text-sm text-red-500 mt-1" role="alert">
+                          <p
+                            id="phone-error"
+                            className="text-sm text-red-500 mt-1"
+                            role="alert"
+                          >
                             {errors.phone}
                           </p>
                         )}
                       </div>
 
                       <div>
-                        <label 
-                          htmlFor="message" 
+                        <label
+                          htmlFor="message"
                           className="block text-sm font-medium mb-2"
                         >
-                          הודעה <span className="text-red-500" aria-label="שדה חובה">*</span>
+                          הודעה{' '}
+                          <span className="text-red-500" aria-label="שדה חובה">
+                            *
+                          </span>
                         </label>
                         <Textarea
                           id="message"
                           placeholder="ספר לי על הפרויקט שלך..."
                           rows={6}
                           value={formData.message}
-                          onChange={(e) => handleChange("message", e.target.value)}
+                          onChange={(e) =>
+                            handleChange('message', e.target.value)
+                          }
                           aria-required="true"
                           aria-invalid={!!errors.message}
-                          aria-describedby={errors.message ? "message-error" : undefined}
-                          className={errors.message ? "border-red-500" : ""}
+                          aria-describedby={
+                            errors.message ? 'message-error' : undefined
+                          }
+                          className={errors.message ? 'border-red-500' : ''}
                         />
                         {errors.message && (
-                          <p id="message-error" className="text-sm text-red-500 mt-1" role="alert">
+                          <p
+                            id="message-error"
+                            className="text-sm text-red-500 mt-1"
+                            role="alert"
+                          >
                             {errors.message}
                           </p>
                         )}
                       </div>
 
-                      {status && (
-                        <div
-                          className={`p-4 rounded-md flex items-start gap-3 ${
-                            status.type === "success"
-                              ? "bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200"
-                              : "bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200"
-                          }`}
-                          role="alert"
-                          aria-live="polite"
-                        >
-                          {status.type === "success" ? (
-                            <CheckCircle2 className="h-5 w-5 shrink-0 mt-0.5" />
-                          ) : (
-                            <XCircle className="h-5 w-5 shrink-0 mt-0.5" />
-                          )}
-                          <p>{status.message}</p>
-                        </div>
-                      )}
-
-                      <Button 
-                        type="submit" 
-                        size="lg" 
-                        className="w-full hover-lift" 
+                      <Button
+                        type="submit"
+                        size="lg"
+                        className="w-full hover-lift"
                         disabled={isLoading}
-                        aria-label={isLoading ? "שולח הודעה..." : "שלח הודעה"}
+                        aria-label={isLoading ? 'שולח הודעה...' : 'שלח הודעה'}
                       >
                         {isLoading ? (
                           <>
@@ -258,7 +282,7 @@ export default function ContactPage() {
                             שולח...
                           </>
                         ) : (
-                          "שלח הודעה"
+                          'שלח הודעה'
                         )}
                       </Button>
                     </form>
@@ -280,7 +304,7 @@ export default function ContactPage() {
                         <h3 className="font-semibold mb-1">אימייל</h3>
                         <a
                           href="mailto:urielpa308@gmail.com"
-                          className="text-sm text-muted-foreground hover:text-primary transition-colors focus-ring rounded"
+                          className="text-sm text-muted-foreground hover:text-primary transition-colors rounded"
                         >
                           urielpa308@gmail.com
                         </a>
@@ -301,7 +325,7 @@ export default function ContactPage() {
                         <h3 className="font-semibold mb-1">טלפון</h3>
                         <a
                           href="tel:0546803661"
-                          className="text-sm text-muted-foreground hover:text-primary transition-colors focus-ring rounded"
+                          className="text-sm text-muted-foreground hover:text-primary transition-colors rounded"
                         >
                           054-6803661
                         </a>
@@ -321,7 +345,8 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold mb-1">זמינות</h3>
                         <p className="text-sm text-muted-foreground">
-                          ראשון - חמישי<br />
+                          ראשון - חמישי
+                          <br />
                           09:00 - 18:00
                         </p>
                       </div>
