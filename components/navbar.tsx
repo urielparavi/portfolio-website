@@ -31,7 +31,6 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
           <Link
             href="/"
             className="flex items-center gap-2 transition-all hover:opacity-80"
@@ -49,7 +48,6 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
@@ -67,7 +65,6 @@ export function Navbar() {
                   {link.label}
                 </span>
 
-                {/* Active indicator - animated underline */}
                 <span
                   className={`absolute bottom-0 right-0 h-0.5 bg-primary transition-all duration-500 ease-in-out ${
                     isActive(link.href) ? 'w-full' : 'w-0 group-hover:w-full'
@@ -77,7 +74,6 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Right side - Theme Toggle + CTA */}
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
             <Button asChild size="sm" className="hover-lift">
@@ -85,7 +81,6 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             <ThemeToggle />
             <Button
@@ -104,7 +99,6 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 space-y-2 animate-in slide-in-from-top-5 duration-300">
             {navLinks.map((link) => (
@@ -120,7 +114,6 @@ export function Navbar() {
               >
                 {link.label}
 
-                {/* Active indicator for mobile - right border */}
                 {isActive(link.href) && (
                   <span className="absolute right-0 top-0 h-full w-1 bg-primary rounded-r" />
                 )}
