@@ -8,6 +8,7 @@ import { ScrollProgressBar } from '@/components/scroll-progress';
 import { PageLoadingIndicator } from '@/components/page-loading-indicator';
 import { Toaster } from '@/components/toaster';
 import { CountdownBanner } from '@/components/countdown-banner';
+import { WhatsAppButton } from '@/components/whatsapp-button';
 
 const heebo = Heebo({
   subsets: ['hebrew', 'latin'],
@@ -101,7 +102,7 @@ export default function RootLayout({
           {children}
 
           <BackToTop />
-
+          <WhatsAppButton />
           <Toaster />
         </ThemeProvider>
       </body>
