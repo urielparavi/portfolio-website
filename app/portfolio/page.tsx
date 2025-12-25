@@ -20,46 +20,46 @@ const projects = [
   {
     id: 1,
     image: '/projects/ai-chatbot.jpg',
-    title: "צ'אטבוט AI חכם עם חיפוש סמנטי",
+    title: "RAG Chatbot - צ'אטבוט AI חכם עם חיפוש סמנטי",
     description:
-      "מערכת צ'אטבוט מתקדמת המבצעת חיפוש סמנטי במסמכים שהועלו על ידי המשתמש, משלבת AI ופייתון עם טכנולוגיות web.",
-    technologies: ['Python', 'AI', 'OpenAI SDK', 'RAG'],
-    category: 'Backend',
+      "מערכת צ'אטבוט מתקדמת המבצעת חיפוש סמנטי במסמכים שהועלו על ידי המשתמש, משלבת AI עם טכנולוגיות Web מודרניות.",
+    technologies: ['Next.js', 'TypeScript', 'AI', 'OpenAI SDK', 'RAG'],
+    category: 'Full Stack',
     year: '2025',
-    link: '#',
+    link: 'https://rag-chatbot-cl.vercel.app',
   },
   {
     id: 2,
     image: '/projects/recipe-bot.jpg',
-    title: "צ'אטבוט מודלה ליצירת מתכונים",
+    title: "מודלה - צ'אטבוט ליצירת מתכונים מותאמים אישית",
     description:
       "צ'אטבוט שמספק מתכונים מלאים – כולל מרכיבים, כמויות, שלבי הכנה וזמן הכנה – לכל מנה שתבחר, בצורה אינטראקטיבית ונוחה.",
     technologies: ['Next.js', 'AI', 'OpenAI SDK', 'Chatbot', 'Recipes'],
     category: 'Full Stack',
     year: '2025',
-    link: '#',
+    link: 'https://recipe-app-modale.vercel.app',
   },
   {
     id: 3,
     image: '/projects/blockchain.jpg',
-    title: 'מערכת Blockchain ומטבע קריפטו',
+    title: 'Blockchain - רשת דיגיטלית מבוזרת שמבוססת על קריפטוגרפיה',
     description:
-      'פרויקט מעשי שבו בניתי מערכת Blockchain ומטבע קריפטו מלאה באמצעות Python מהבסיס.',
+      'מערכת Blockchain מותאמת אישית עם מטבע קריפטוגרפי, שפותחה מהבסיס וממחישה עבודה עם רשת מבוזרת, אבטחה וניהול עסקאות.',
     technologies: ['Python', 'Blockchain', 'Cryptocurrency'],
     category: 'Backend',
     year: '2025',
-    link: '#',
+    link: 'https://bitkoin-blockchain-py.up.railway.app',
   },
   {
     id: 4,
     image: '/projects/nextcart.jpg',
-    title: 'NextCart - פלטפורמת E-commerce',
+    title: 'NextCart - פלטפורמת איקומרס',
     description:
-      'פלטפורמת סחר אלקטרוני מתקדמת הבנויה עם Next.js, TypeScript ו-PostgreSQL, כוללת תשלומים, פאנל ניהול ואימות מלא.',
+      'מערכת איקומרס מתקדמת המאפשרת מכירה אונליין בצורה נוחה ובטוחה, עם ניהול מוצרים, תשלומים ופאנל ניהול חכם לעסק.',
     technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Payments'],
     category: 'Full Stack',
     year: '2025',
-    link: '#',
+    link: 'https://next-ecommerce-ten-wine.vercel.app',
   },
   {
     id: 5,
@@ -70,18 +70,18 @@ const projects = [
     technologies: ['React', 'E-commerce', 'UI/UX'],
     category: 'Frontend',
     year: '2024',
-    link: '#',
+    link: 'https://my-store-ts-cleaned.vercel.app',
   },
   {
     id: 6,
-    image: '/projects/focusflow.jpg',
-    title: 'FocusFlow - אפליקציית פוקוס',
+    image: '/projects/uriel-blog.jpg',
+    title: "Uriel' Blog - בלוג פרויקטים אישי",
     description:
-      'אפליקציית טיימר מינימליסטית שנועדה לעזור למשתמשים לשפר ריכוז באמצעות טכניקת Pomodoro.',
-    technologies: ['React', 'Timer', 'Productivity'],
-    category: 'Frontend',
+      'בלוג אישי מודרני להצגת פרויקטים, עם פוסטים דינמיים, עמודי תוכן נפרדים וטופס יצירת קשר מובנה.',
+    technologies: ['Next.js', 'React', 'Dynamic Routing', 'Blog', 'Email Form'],
+    category: 'Full Stack',
     year: '2024',
-    link: '#',
+    link: 'https://next-js-posts-site.vercel.app',
   },
   {
     id: 7,
@@ -92,7 +92,7 @@ const projects = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
     category: 'Frontend',
     year: '2023',
-    link: '#',
+    link: 'https://natours-appnour.onrender.com',
   },
   {
     id: 8,
@@ -103,18 +103,18 @@ const projects = [
     technologies: ['React', 'Dashboard', 'Job Tracking'],
     category: 'Full Stack',
     year: '2022',
-    link: '#',
+    link: 'https://jobify-update-v2-reactquery.onrender.com',
   },
   {
     id: 9,
     image: '/projects/tailwind-shoes.jpg',
     title: 'Tailwind Shoes - תבנית חנות נעליים',
     description:
-      'תבנית אלגנטית המופעלת על ידי Tailwind CSS להצגה ומכירה של נעליים אונליין, כוללת עיצוב רספונסיבי וקומפוננטות UI נקיות.',
+      'תבנית חנות אונליין אלגנטית להצגת ומכירת נעליים, עם עיצוב מודרני, חוויית משתמש נוחה וניווט ברור, המותאמת לגלישה מושלמת במחשב ובמובייל.',
     technologies: ['Tailwind CSS', 'Template', 'E-commerce'],
     category: 'Frontend',
     year: '2021',
-    link: '#',
+    link: 'https://tailwind-shoes-cleaned.vercel.app',
   },
 ];
 
@@ -149,7 +149,7 @@ export default function PortfolioPage() {
           <FadeIn>
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                הפורטפוליו שלי
+                מבין הפרויקטים שבניתי
               </h1>
               <p className="text-lg text-muted-foreground text-balance">
                 מבחר פרויקטים שבניתי - מאתרי נחיתה ועד מערכות מתקדמות
@@ -179,7 +179,16 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
             {currentProjects.map((project, index) => (
               <FadeIn key={project.id} delay={index * 50} direction="up">
-                <Card className="h-full hover-lift hover-shadow-medium transition-all duration-300 group overflow-hidden">
+                <Card
+                  className={`h-full hover-lift hover-shadow-medium transition-all duration-300 group overflow-hidden ${
+                    project.link !== '#' ? 'cursor-pointer' : ''
+                  }`}
+                  onClick={() => {
+                    if (project.link !== '#') {
+                      window.open(project.link, '_blank');
+                    }
+                  }}
+                >
                   {/* Image Container */}
                   <div className="relative aspect-video overflow-hidden bg-muted">
                     <Image
@@ -190,11 +199,13 @@ export default function PortfolioPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
 
-                    <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="text-primary-foreground">
-                        <ExternalLink className="h-8 w-8" />
+                    {project.link !== '#' && (
+                      <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="text-primary-foreground">
+                          <ExternalLink className="h-8 w-8" />
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
 
                   <CardHeader>
