@@ -31,7 +31,7 @@ const projects = [
   {
     id: 2,
     image: '/projects/recipe-bot.jpg',
-    title: "צ'אטבוט מודלה - מתכונים ליצירת אוכל",
+    title: "צ'אטבוט מודלה ליצירת מתכונים",
     description:
       "צ'אטבוט שמספק מתכונים מלאים – כולל מרכיבים, כמויות, שלבי הכנה וזמן הכנה – לכל מנה שתבחר, בצורה אינטראקטיבית ונוחה.",
     technologies: ['Next.js', 'AI', 'OpenAI SDK', 'Chatbot', 'Recipes'],

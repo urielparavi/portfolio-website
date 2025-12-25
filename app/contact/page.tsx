@@ -106,7 +106,8 @@ export default function ContactPage() {
                 צור קשר
               </h1>
               <p className="text-lg text-muted-foreground text-balance">
-                !יש לך פרויקט במחשבה? בוא נדבר ונבנה משהו מדהים ביחד
+                רוצה להפוך את הרעיון שלך לאתר או אפליקציה? בוא נדבר ונמצא את
+                הפתרון המושלם!
               </p>
             </div>
           </FadeIn>
