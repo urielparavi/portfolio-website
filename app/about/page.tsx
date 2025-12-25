@@ -24,7 +24,7 @@ import { FadeIn } from '@/components/fade-in';
 export const metadata: Metadata = {
   title: 'אודות - הסיפור שלי',
   description:
-    'היי, אני אוריאל - מפתח Full Stack עם 6+ שנות ניסיון בבניית אתרים ואפליקציות מתקדמות. מתמחה ב-React, Next.js, Node.js ופיתוח AI.',
+    'היי, אני אוריאל - מפתח Full Stack עם 6+ שנות ניסיון בפיתוח תוכנה, אתרים ואפליקציות מתקדמות. מתמחה ב-React, Next.js, Node.js ופיתוח AI.',
   openGraph: {
     title: 'אודות - אוריאל בניית אתרים',
     description:
@@ -170,8 +170,8 @@ export default function AboutPage() {
                       <span className="font-semibold text-foreground">
                         Full Stack
                       </span>{' '}
-                      עם למעלה מ-6 שנות ניסיון בבניית אתרים ואפליקציות web
-                      מתקדמות.
+                      עם למעלה מ-6 שנות ניסיון בפיתוח תוכנה, אתרים ואפליקציות
+                      web מתקדמות.
                     </p>
                     <p>
                       מתמחה ב-React, Next.js, Node.js ופיתוח AI - מאתרי נחיתה
