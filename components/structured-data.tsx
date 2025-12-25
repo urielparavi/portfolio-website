@@ -34,7 +34,7 @@ export function StructuredData() {
         priceRange: '$$',
         image: 'https://www.uriel-sites.com/logo.png',
         description:
-          'פיתוח אתרים מותאמים אישית לעסק שלך. מתמחה באתרי נחיתה, אתרי תדמית וחנויות מקוונות.',
+          'פיתוח תוכנה, אתרים ואפליקציות בהתאמה אישית לעסק שלך. מתמחה ב‑Web Development, כולל אתרי נחיתה, אתרי תדמית, חנויות מקוונות ועוד.',
         areaServed: {
           '@type': 'Country',
           name: 'Israel',
