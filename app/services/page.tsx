@@ -166,7 +166,7 @@ export default function ServicesPage() {
                       </p>
                       <Button asChild className="w-full" size="lg">
                         <Link href="/contact">
-                          בוא נדבר
+                          בוא נתחיל את הפרויקט שלך!
                           <ArrowLeft className="mr-2 h-4 w-4" />
                         </Link>
                       </Button>
@@ -217,7 +217,7 @@ export default function ServicesPage() {
               </p>
               <Button asChild size="lg" className="hover-lift">
                 <Link href="/contact">
-                  צור קשר עכשיו
+                  נתחיל לעבוד?
                   <ArrowLeft className="mr-2 h-5 w-5" />
                 </Link>
               </Button>
