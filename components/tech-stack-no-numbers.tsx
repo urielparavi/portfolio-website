@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import { FadeIn } from '@/components/fade-in';
 import {
   Code2,
@@ -5,7 +8,7 @@ import {
   FileCode,
   Palette,
   Server,
-  Database,
+  Leaf,
   Terminal,
   Container,
   GitBranch,
@@ -19,63 +22,128 @@ const technologies = [
     name: 'React',
     icon: Code2,
     gradient: 'from-blue-500 to-cyan-500',
+    level: 95,
   },
   {
     name: 'Next.js',
     icon: Layers,
     gradient: 'from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400',
+    level: 95,
   },
   {
     name: 'TypeScript',
     icon: FileCode,
     gradient: 'from-blue-600 to-blue-400',
+    level: 90,
   },
   {
     name: 'Tailwind CSS',
     icon: Palette,
     gradient: 'from-cyan-500 to-blue-500',
+    level: 95,
   },
   {
     name: 'Node.js',
     icon: Server,
     gradient: 'from-green-600 to-green-400',
+    level: 85,
   },
   {
     name: 'MongoDB',
-    icon: Database,
+    icon: Leaf,
     gradient: 'from-green-500 to-emerald-500',
+    level: 80,
   },
   {
     name: 'Python',
     icon: Terminal,
     gradient: 'from-yellow-500 to-blue-500',
+    level: 85,
   },
   {
     name: 'Docker',
     icon: Container,
     gradient: 'from-blue-500 to-blue-600',
+    level: 75,
   },
   {
     name: 'Git',
     icon: GitBranch,
     gradient: 'from-orange-600 to-red-500',
+    level: 90,
   },
   {
     name: 'OpenAI',
     icon: Sparkles,
     gradient: 'from-purple-500 to-pink-500',
+    level: 85,
   },
   {
     name: 'Vercel',
     icon: Zap,
     gradient: 'from-gray-900 to-gray-700 dark:from-gray-100 dark:to-gray-300',
+    level: 90,
   },
   {
     name: 'PostgreSQL',
     icon: Cylinder,
     gradient: 'from-blue-600 to-blue-400',
+    level: 75,
   },
 ];
+
+function TechCard({ tech, index }: { tech: typeof technologies[0]; index: number }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const Icon = tech.icon;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsVisible(true), index * 50);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [index]);
+
+  return (
+    <FadeIn delay={index * 30} direction="up">
+      <div ref={ref} className="group">
+        <div className="aspect-square rounded-2xl bg-card border border-border/50 flex flex-col items-center justify-center gap-3 hover-lift hover-glow transition-all duration-300 hover:border-primary/50 p-4">
+          <div
+            className={`w-16 h-16 rounded-xl bg-gradient-to-br ${tech.gradient} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}
+          >
+            <Icon className="h-8 w-8 text-white" strokeWidth={1.5} />
+          </div>
+          <span className="text-sm font-medium text-center px-2">
+            {tech.name}
+          </span>
+          
+          {/* Progress bar - בלי מספרים! */}
+          <div className="w-full px-2">
+            <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+              <div
+                className={`h-full bg-gradient-to-r ${tech.gradient} rounded-full transition-all duration-1000 ease-out`}
+                style={{
+                  width: isVisible ? `${tech.level}%` : '0%',
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </FadeIn>
+  );
+}
 
 export function TechStack() {
   return (
@@ -96,28 +164,9 @@ export function TechStack() {
 
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {technologies.map((tech, index) => {
-              const Icon = tech.icon;
-              return (
-                <FadeIn key={index} delay={index * 30} direction="up">
-                  <div className="group">
-                    <div className="aspect-square rounded-2xl bg-card border border-border/50 flex flex-col items-center justify-center gap-3 hover-lift hover-glow transition-all duration-300 hover:border-primary/50">
-                      <div
-                        className={`w-16 h-16 rounded-xl bg-gradient-to-br ${tech.gradient} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}
-                      >
-                        <Icon
-                          className="h-8 w-8 text-white"
-                          strokeWidth={1.5}
-                        />
-                      </div>
-                      <span className="text-sm font-medium text-center px-2">
-                        {tech.name}
-                      </span>
-                    </div>
-                  </div>
-                </FadeIn>
-              );
-            })}
+            {technologies.map((tech, index) => (
+              <TechCard key={index} tech={tech} index={index} />
+            ))}
           </div>
         </div>
 
