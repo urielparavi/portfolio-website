@@ -24,11 +24,11 @@ import { FadeIn } from '@/components/fade-in';
 export const metadata: Metadata = {
   title: 'אודות - הסיפור שלי',
   description:
-    'היי, אני אוריאל - מפתח Full Stack עם 7+ שנות ניסיון בבניית אתרים ואפליקציות מתקדמות. מתמחה ב-React, Next.js, Node.js ופיתוח AI.',
+    'היי, אני אוריאל - מפתח Full Stack עם 6+ שנות ניסיון בבניית אתרים ואפליקציות מתקדמות. מתמחה ב-React, Next.js, Node.js ופיתוח AI.',
   openGraph: {
     title: 'אודות - אוריאל בניית אתרים',
     description:
-      'הכירו את אוריאל - מפתח Full Stack עם 7+ שנות ניסיון. מתמחה ב-React, Next.js, AI ו-E-commerce.',
+      'הכירו את אוריאל - מפתח Full Stack עם 6+ שנות ניסיון. מתמחה ב-React, Next.js, AI ו-E-commerce.',
   },
 };
 

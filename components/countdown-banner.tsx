@@ -76,7 +76,7 @@ export function CountdownBanner() {
           <div className="flex items-center gap-2">
             <Clock className="h-5 w-5 animate-pulse" />
             <span className="text-sm md:text-base font-bold">
-              🎁 מבצע מיוחד - חסכו 200 ש"ח!
+              🎁 מבצע מיוחד - חסכו 400 ש"ח!
             </span>
           </div>
 

@@ -17,11 +17,11 @@ const heebo = Heebo({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.uriel-sites.com'),
   title: {
-    default: 'אוריאל - בניית אתרים ואפליקציות | מפתח Full Stack',
-    template: '%s | אוריאל - בניית אתרים',
+    default: 'אוריאל - פיתוח תוכנה, אתרים ואפליקציות | מפתח Full Stack',
+    template: '%s | אוריאל - פיתוח תוכנה',
   },
   description:
-    'פיתוח אתרים מותאמים אישית לעסק שלך. מתמחה באתרי נחיתה, אתרי תדמית וחנויות מקוונות. טכנולוגיות מתקדמות: Next.js, React, TypeScript.',
+    'פיתוח תוכנה, אתרים ואפליקציות בהתאמה אישית לעסק שלך. מתמחה ב‑Web Development, כולל אתרי נחיתה, אתרי תדמית, חנויות מקוונות ועוד.',
   keywords: [
     'בניית אתרים',
     'פיתוח אתרים',
@@ -46,15 +46,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'he_IL',
     url: 'https://www.uriel-sites.com',
-    title: 'אוריאל - בניית אתרים ואפליקציות | מפתח Full Stack',
+    title: 'אוריאל - פיתוח תוכנה, אתרים ואפליקציות | מפתח Full Stack',
     description:
-      'פיתוח אתרים מותאמים אישית לעסק שלך. מתמחה באתרי נחיתה, אתרי תדמית וחנויות מקוונות.',
-    siteName: 'אוריאל - בניית אתרים',
+      'פיתוח תוכנה, אתרים ואפליקציות בהתאמה אישית לעסק שלך. מתמחה ב‑Web Development, כולל אתרי נחיתה, אתרי תדמית, חנויות מקוונות ועוד.',
+    siteName: 'אוריאל - פיתוח תוכנה',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'אוריאל - בניית אתרים ואפליקציות',
-    description: 'פיתוח אתרים מותאמים אישית לעסק שלך',
+    title: 'אוריאל - פיתוח תוכנה, אתרים ואפליקציות',
+    description: 'פיתוח תוכנה, אתרים ואפליקציות בהתאמה אישית לעסק שלך',
   },
   robots: {
     index: true,

@@ -1,4 +1,4 @@
-# אוריאל - בניית אתרים ואפליקציות
+# אוריאל - פיתוח תוכנה, אתרים ואפליקציות
 
 Portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and shadcn/ui.
 
