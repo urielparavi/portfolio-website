@@ -27,7 +27,7 @@ export function StructuredData() {
       {
         '@type': 'LocalBusiness',
         '@id': 'https://www.uriel-sites.com/#business',
-        name: 'אוריאל - בניית אתרים ואפליקציות',
+        name: 'אוריאל - פיתוח תוכנה, אתרים ואפליקציות',
         url: 'https://www.uriel-sites.com',
         telephone: '+972-54-6803661',
         email: 'urielpa308@gmail.com',
@@ -74,7 +74,7 @@ export function StructuredData() {
         '@type': 'WebSite',
         '@id': 'https://www.uriel-sites.com/#website',
         url: 'https://www.uriel-sites.com',
-        name: 'אוריאל - בניית אתרים ואפליקציות',
+        name: 'אוריאל - פיתוח תוכנה, אתרים ואפליקציות',
         description: 'פיתוח אתרים מותאמים אישית לעסק שלך',
         publisher: {
           '@id': 'https://www.uriel-sites.com/#person',
