@@ -110,7 +110,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">מוכן להתחיל?</h3>
             <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-              בוא נדבר על הפרויקט הבא שלך
+              בוא ונדבר על הפרויקט הבא שלך!
             </p>
             <Button asChild size="sm" className="w-full hover-lift">
               <Link href="/contact">צור קשר עכשיו</Link>
