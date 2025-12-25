@@ -13,7 +13,6 @@ import {
   Sparkles,
   ArrowLeft,
   Rocket,
-  Database,
   Layout,
   Server,
   Container,
@@ -147,7 +146,7 @@ const values = [
       'העולם הטכנולוגי משתנה מהר, ואני תמיד מעדכן את הידע והכלים שלי.',
   },
   {
-    title: 'מוקד בתוצאות',
+    title: 'התמקדות בתוצאות',
     description: 'המטרה היא לא רק לבנות אתר יפה, אלא אתר שעובד ומביא תוצאות.',
   },
 ];
@@ -343,13 +342,14 @@ export default function AboutPage() {
                 <CardContent className="pt-8 pb-8">
                   <h2 className="text-3xl font-bold mb-4">בוא נעבוד ביחד</h2>
                   <p className="text-lg text-muted-foreground mb-6">
-                    יש לך פרויקט במחשבה? אשמח לשמוע ולעזור להפוך אותו למציאות
+                    רוצה להפוך את הרעיון שלך לאתר או אפליקציה? אני כאן כדי
+                    לעזור.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
                     <Button asChild size="lg" className="hover-lift">
                       <Link href="/contact">
-                        שלח הודעה
+                        בואו נבנה את האתר שלכם ביחד!
                         <ArrowLeft className="mr-2 h-5 w-5" />
                       </Link>
                     </Button>
