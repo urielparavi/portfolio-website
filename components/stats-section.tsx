@@ -1,25 +1,25 @@
-import { FadeIn } from "@/components/fade-in";
+import { FadeIn } from '@/components/fade-in';
 
 const stats = [
   {
-    value: "13+",
-    label: "טכנולוגיות",
-    description: "שאני עובד איתן",
+    value: '16+',
+    label: 'טכנולוגיות',
+    description: 'שאני עובד איתן',
   },
   {
-    value: "8",
-    label: "פרויקטים",
-    description: "שהושלמו בהצלחה",
+    value: '51',
+    label: 'פרויקטים',
+    description: 'שהושלמו בהצלחה',
   },
   {
-    value: "100%",
-    label: "מחויבות",
-    description: "לאיכות ולביצועים",
+    value: '100%',
+    label: 'מחויבות',
+    description: 'לאיכות ולביצועים',
   },
   {
-    value: "24/7",
-    label: "תמיכה",
-    description: "זמינות מלאה",
+    value: '24/7',
+    label: 'תמיכה',
+    description: 'זמינות מלאה',
   },
 ];
 
@@ -35,7 +35,9 @@ export function StatsSection() {
                   {stat.value}
                 </div>
                 <div className="text-lg font-semibold mb-1">{stat.label}</div>
-                <div className="text-sm text-muted-foreground">{stat.description}</div>
+                <div className="text-sm text-muted-foreground">
+                  {stat.description}
+                </div>
               </div>
             </FadeIn>
           ))}

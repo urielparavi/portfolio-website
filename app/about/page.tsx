@@ -171,7 +171,7 @@ export default function AboutPage() {
                       <span className="font-semibold text-foreground">
                         Full Stack
                       </span>{' '}
-                      עם למעלה מ-7 שנות ניסיון בבניית אתרים ואפליקציות web
+                      עם למעלה מ-6 שנות ניסיון בבניית אתרים ואפליקציות web
                       מתקדמות.
                     </p>
                     <p>

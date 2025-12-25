@@ -44,7 +44,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="group inline-block mb-4">
               <h3 className="text-xl font-bold gradient-text group-hover:gradient-text-vibrant transition-all duration-500 ease-in-out">
-                אוריאל
+                Weby
               </h3>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
