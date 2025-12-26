@@ -185,8 +185,8 @@ export function ImageCarousel() {
                       {currentProject.subtitle}
                     </p>
 
-                    {/* Tech stack - theme variations */}
-                    <div className="flex flex-wrap gap-2">
+                    {/* Tech stack - hidden on mobile */}
+                    <div className="hidden sm:flex flex-wrap gap-2">
                       {currentProject.tech.map((tech, idx) => {
                         const Icon = tech.icon;
                         const gradients = [
@@ -213,11 +213,11 @@ export function ImageCarousel() {
             </div>
           </div>
 
-          {/* Navigation Buttons - theme primary */}
+          {/* Navigation Buttons - hidden on mobile */}
           <Button
             variant="outline"
             size="icon"
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-gradient-to-r from-primary/80 to-primary hover:from-primary hover:to-primary/90 text-primary-foreground border-0 shadow-2xl shadow-primary/30 transition-all duration-300"
+            className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 bg-gradient-to-r from-primary/80 to-primary hover:from-primary hover:to-primary/90 text-primary-foreground border-0 shadow-2xl shadow-primary/30 transition-all duration-300"
             onClick={nextSlide}
             disabled={isTransitioning}
             aria-label="התמונה הבאה"
@@ -228,7 +228,7 @@ export function ImageCarousel() {
           <Button
             variant="outline"
             size="icon"
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground border-0 shadow-2xl shadow-primary/30 transition-all duration-300"
+            className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground border-0 shadow-2xl shadow-primary/30 transition-all duration-300"
             onClick={prevSlide}
             disabled={isTransitioning}
             aria-label="התמונה הקודמת"
