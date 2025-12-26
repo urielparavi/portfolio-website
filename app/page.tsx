@@ -10,7 +10,7 @@ import { Testimonials } from '@/components/testimonials';
 import { FAQ } from '@/components/faq';
 import { WhoItsForDiagonal } from '@/components/who-its-for-diagonal';
 import { TechStackWithNumbers } from '@/components/tech-stack-with-numbers';
-import { TechStack } from '@/components/tech-stack-no-numbers';
+// import { TechStack } from '@/components/tech-stack-no-numbers';
 
 export default function Home() {
   return (
