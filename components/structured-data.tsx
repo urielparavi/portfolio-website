@@ -9,7 +9,7 @@ export function StructuredData() {
         url: 'https://www.uriel-sites.com',
         email: 'urielpa308@gmail.com',
         telephone: '+972-54-6803661',
-        jobTitle: 'Full Stack Developer',
+        jobTitle: 'Full Stack Web Developer',
         description: 'מפתח Full Stack המתמחה בבניית אתרים מקצועיים',
         knowsAbout: [
           'Web Development',
