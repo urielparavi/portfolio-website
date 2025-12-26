@@ -61,8 +61,9 @@ export function FAQ() {
 
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Subtle gradient background */}
+      {/* Enhanced gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-muted/30 to-background -z-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(var(--primary)/0.05)_0%,transparent_50%)] -z-10" />
 
       <div className="container mx-auto px-4">
         <FadeIn>
@@ -79,34 +80,59 @@ export function FAQ() {
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
             <FadeIn key={index} delay={index * 50}>
-              <div className="border rounded-lg overflow-hidden bg-card hover:shadow-md transition-shadow">
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-4 text-right flex items-center justify-between gap-4 hover:bg-muted/50 transition-colors"
-                  aria-expanded={openIndex === index}
-                  aria-controls={`faq-answer-${index}`}
-                >
-                  <span className="font-semibold text-lg">{faq.question}</span>
-                  <ChevronDown
-                    className={`h-5 w-5 shrink-0 transition-transform duration-300 ${
-                      openIndex === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
+              {/* Gradient border wrapper */}
+              <div className="relative p-[1px] rounded-xl bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 hover:from-primary/30 hover:via-primary/20 hover:to-primary/30 transition-all duration-300 group">
+                <div className="rounded-xl overflow-hidden bg-card shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 relative">
+                  {/* Question button */}
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full px-6 py-5 text-right flex items-center justify-between gap-4 hover:bg-gradient-to-r hover:from-primary/5 hover:via-primary/10 hover:to-primary/5 transition-all duration-300 relative"
+                    aria-expanded={openIndex === index}
+                    aria-controls={`faq-answer-${index}`}
+                  >
+                    <span className="font-semibold text-lg group-hover:text-primary transition-colors duration-300">
+                      {faq.question}
+                    </span>
 
-                <div
-                  id={`faq-answer-${index}`}
-                  className={`grid transition-all duration-300 ease-in-out ${
-                    openIndex === index
-                      ? 'grid-rows-[1fr] opacity-100'
-                      : 'grid-rows-[0fr] opacity-0'
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <div className="px-6 pb-4 text-muted-foreground leading-relaxed">
-                      {faq.answer}
+                    {/* Enhanced chevron icon */}
+                    <div className="relative shrink-0">
+                      <div
+                        className={`w-8 h-8 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center shadow-sm transition-all duration-300 ${
+                          openIndex === index
+                            ? 'bg-primary/20 shadow-md shadow-primary/20'
+                            : ''
+                        }`}
+                      >
+                        <ChevronDown
+                          className={`h-5 w-5 text-primary transition-transform duration-300 ${
+                            openIndex === index ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </div>
+                    </div>
+                  </button>
+
+                  {/* Answer with gradient top border */}
+                  <div
+                    id={`faq-answer-${index}`}
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      openIndex === index
+                        ? 'grid-rows-[1fr] opacity-100'
+                        : 'grid-rows-[0fr] opacity-0'
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      {/* Gradient divider */}
+                      <div className="h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent mx-6" />
+
+                      <div className="px-6 py-5 text-muted-foreground leading-relaxed">
+                        {faq.answer}
+                      </div>
                     </div>
                   </div>
+
+                  {/* Subtle shine effect on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </div>
               </div>
             </FadeIn>
