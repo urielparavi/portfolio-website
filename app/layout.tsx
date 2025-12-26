@@ -86,7 +86,9 @@ export default function RootLayout({
       </head>
       <body className={heebo.className}>
         {process.env.NODE_ENV === 'production' && (
-          <GoogleAnalytics measurementId="G-XXXXXXXXXX" />
+          <GoogleAnalytics
+            measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!}
+          />
         )}
 
         <ThemeProvider
