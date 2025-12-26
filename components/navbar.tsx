@@ -53,23 +53,18 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative px-4 py-2 text-sm font-medium transition-colors hover:text-primary rounded-md group outline-none"
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-md outline-none ${
+                  isActive(link.href)
+                    ? 'text-primary'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-gradient-to-r hover:from-primary/5 hover:via-primary/10 hover:to-primary/5 hover:shadow-lg hover:shadow-primary/5'
+                }`}
               >
-                <span
-                  className={
-                    isActive(link.href)
-                      ? 'text-primary'
-                      : 'text-muted-foreground'
-                  }
-                >
-                  {link.label}
-                </span>
+                <span>{link.label}</span>
 
-                <span
-                  className={`absolute bottom-0 right-0 h-0.5 bg-primary transition-all duration-500 ease-in-out ${
-                    isActive(link.href) ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}
-                />
+                {/* Underline only for active link */}
+                {isActive(link.href) && (
+                  <span className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-r from-primary/80 via-primary to-primary/80 shadow-sm shadow-primary/50" />
+                )}
               </Link>
             ))}
           </div>
