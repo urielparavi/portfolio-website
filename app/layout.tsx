@@ -9,6 +9,7 @@ import { PageLoadingIndicator } from '@/components/page-loading-indicator';
 import { Toaster } from '@/components/toaster';
 import { CountdownBanner } from '@/components/countdown-banner';
 import { WhatsAppButton } from '@/components/whatsapp-button';
+import { TawkChat } from '@/components/tawk-chat';
 
 const heebo = Heebo({
   subsets: ['hebrew', 'latin'],
@@ -102,7 +103,7 @@ export default function RootLayout({
           <PageLoadingIndicator />
 
           {children}
-
+          <TawkChat />
           <BackToTop />
           <WhatsAppButton />
           <Toaster />
