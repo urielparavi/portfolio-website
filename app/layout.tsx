@@ -10,6 +10,7 @@ import { Toaster } from '@/components/toaster';
 import { CountdownBanner } from '@/components/countdown-banner';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 import { TawkChat } from '@/components/tawk-chat';
+import { CookieBanner } from '@/components/cookie-banner';
 
 const heebo = Heebo({
   subsets: ['hebrew', 'latin'],
@@ -106,6 +107,7 @@ export default function RootLayout({
           <TawkChat />
           <BackToTop />
           <WhatsAppButton />
+          <CookieBanner />
           <Toaster />
         </ThemeProvider>
       </body>
