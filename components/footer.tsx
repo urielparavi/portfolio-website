@@ -125,6 +125,21 @@ export function Footer() {
             © {currentYear} אוריאל - פיתוח תוכנה, בניית אתרים ואפליקציות. כל
             הזכויות שמורות.
           </p>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-primary transition-colors"
+            >
+              מדיניות פרטיות
+            </Link>
+            <span>•</span>
+            <Link
+              href="/terms"
+              className="hover:text-primary transition-colors"
+            >
+              תנאי שימוש
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
