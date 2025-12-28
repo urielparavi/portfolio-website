@@ -1,5 +1,13 @@
 import Link from 'next/link';
-import { Mail, Phone, Github, Linkedin, Facebook, Heart } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  Github,
+  Linkedin,
+  Facebook,
+  Heart,
+  Accessibility,
+} from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 
@@ -122,7 +130,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-sm text-muted-foreground">
           <p className="flex items-center gap-1">
-            © {currentYear} אוריאל - פיתוח תוכנה, בניית אתרים ואפליקציות. כל
+            © {currentYear} Weby - פיתוח תוכנה, בניית אתרים ואפליקציות. כל
             הזכויות שמורות.
           </p>
           <div className="flex items-center gap-3">
@@ -138,6 +146,14 @@ export function Footer() {
               className="hover:text-primary transition-colors"
             >
               תנאי שימוש
+            </Link>
+            <span>•</span>
+            <Link
+              href="/accessibility-statement"
+              className="hover:text-primary transition-colors flex items-center gap-1"
+            >
+              <Accessibility className="h-3.5 w-3.5" />
+              הצהרת נגישות
             </Link>
           </div>
         </div>
