@@ -11,6 +11,8 @@ import { CountdownBanner } from '@/components/countdown-banner';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 import { TawkChat } from '@/components/tawk-chat';
 import { CookieBanner } from '@/components/cookie-banner';
+import { SkipToMain } from '@/components/skip-to-main'; // ← 1️⃣ הוסף את השורה הזו!
+import { FloatingAccessibilityButton } from '@/components/floating-accessibility-button';
 
 const heebo = Heebo({
   subsets: ['hebrew', 'latin'],
@@ -87,12 +89,12 @@ export default function RootLayout({
         <link rel="canonical" href="https://www.uriel-sites.com" />
       </head>
       <body className={heebo.className}>
+        <SkipToMain />
         {process.env.NODE_ENV === 'production' && (
           <GoogleAnalytics
             measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!}
           />
         )}
-
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -109,6 +111,7 @@ export default function RootLayout({
           <WhatsAppButton />
           <CookieBanner />
           <Toaster />
+          <FloatingAccessibilityButton />
         </ThemeProvider>
       </body>
     </html>

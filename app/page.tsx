@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <StructuredData />
       <Navbar />
-      <main className="min-h-screen">
+      <main id="main-content" className="min-h-screen">
         <HeroSection />
         <StatsSection />
         <WhyChooseMe />
