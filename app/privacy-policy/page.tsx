@@ -3,8 +3,20 @@ import Link from 'next/link';
 import { Shield, Lock, Eye, UserCheck, FileText, Globe } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'מדיניות פרטיות',
-  description: 'מדיניות הפרטיות של Weby - בניית אתרים',
+  title: 'מדיניות פרטיות | Weby – אוריאל בניית אתרים',
+  description:
+    'מדיניות הפרטיות של Weby: כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלך. שקיפות מלאה והגנה על הפרטיות שלך.',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'מדיניות פרטיות | Weby',
+    description:
+      'מדיניות הפרטיות של Weby: איסוף מידע, שימוש, אבטחה ושמירה על הפרטיות שלך',
+    type: 'website',
+    locale: 'he_IL',
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -20,7 +32,8 @@ export default function PrivacyPolicyPage() {
             <h1 className="text-4xl md:text-5xl font-bold">מדיניות פרטיות</h1>
             <p className="text-lg text-muted-foreground">
               אנו מחויבים לשקיפות מלאה ולשמירה על המידע האישי שלך בכל פעולה
-              באתר.
+              באתר, ופועלים בהתאם לחוקי הגנת הפרטיות המקומיים והבינלאומיים (כולל
+              GDPR).
             </p>
             <p className="text-sm text-muted-foreground">
               עדכון אחרון: דצמבר 2024
@@ -37,10 +50,10 @@ export default function PrivacyPolicyPage() {
             <div className="prose prose-lg max-w-none mb-12">
               <div className="p-6 rounded-xl bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20">
                 <p className="text-foreground/90 leading-relaxed m-0">
-                  ברוכים הבאים לאתר של אוריאל - פיתוח תוכנה, אתרים ואפליקציות.
-                  מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים, משתפים
-                  ומגנים על המידע האישי שלך. השימוש באתר מהווה הסכמה למדיניות
-                  זו.
+                  ברוכים הבאים לאתר של אוריאל - בניית אתרים. מדיניות פרטיות זו
+                  מסבירה כיצד אנו אוספים, משתמשים, משתפים ומגנים על המידע האישי
+                  שלך. השימוש באתר מהווה הסכמה למדיניות זו. כל טיפול במידע אישי
+                  נעשה בהתאם להוראות החוק ולבסיס חוקי מתאים.
                 </p>
               </div>
             </div>
@@ -66,7 +79,7 @@ export default function PrivacyPolicyPage() {
                       <li>• טפסי יצירת קשר: שם, אימייל, טלפון, תוכן ההודעה</li>
                       <li>
                         • צ'אט חי (Tawk.to, WhatsApp או מערכות אחרות): תוכן
-                        השיחה, שם אם נמסר
+                        השיחה ושם אם נמסר
                       </li>
                       <li>
                         • מידע שניתן בעת הרשמה, פניות, הרשמות לניוזלטר או שימוש
@@ -117,8 +130,8 @@ export default function PrivacyPolicyPage() {
                 <div className="pr-15 space-y-3">
                   <div className="p-4 rounded-lg bg-muted/30 border-r-4 border-primary/50">
                     <p className="text-foreground/90">
-                      ✓ מענה לפניות ושירות לקוחות: נוכל לענות לשאלות, לפתור
-                      בעיות ולהציע שירות מותאם.
+                      ✓ מענה לפניות ושירות לקוחות, כולל טיפול בבקשות וזכויות
+                      פרטיות.
                     </p>
                   </div>
                   <div className="p-4 rounded-lg bg-muted/30 border-r-4 border-primary/50">
@@ -135,14 +148,13 @@ export default function PrivacyPolicyPage() {
                   </div>
                   <div className="p-4 rounded-lg bg-muted/30 border-r-4 border-primary/50">
                     <p className="text-foreground/90">
-                      ✓ תקשורת ושיווק מותאם אישית: שליחת מידע ועדכונים רק אם
-                      הסכמת לכך.
+                      ✓ תקשורת ושיווק מותאם אישית אך רק לאחר הסכמה מפורשת.
                     </p>
                   </div>
                   <div className="p-4 rounded-lg bg-muted/30 border-r-4 border-primary/50">
                     <p className="text-foreground/90">
-                      ✓ ניהול שירותים נוספים: התאמה אישית של חוויית המשתמש
-                      ושירותי צד שלישי.
+                      ✓ ניהול שירותים נוספים ושיתוף מידע עם צדדים שלישיים בהתאם
+                      למדיניות.
                     </p>
                   </div>
                 </div>
@@ -161,7 +173,7 @@ export default function PrivacyPolicyPage() {
                     אנו עשויים להשתמש בשירותי צד שלישי מהימנים (למשל, צ'אט,
                     ניתוח תעבורה, אחסון ושירותי API נוספים) כדי לשפר את השירות.
                     שירותים אלו עשויים לאסוף מידע עליך בהתאם למדיניות הפרטיות
-                    שלהם.
+                    שלהם, ואנו לא אחראים למידע שנאסף או מנוהל על ידם.
                   </p>
 
                   <div className="grid gap-4">
@@ -250,7 +262,8 @@ export default function PrivacyPolicyPage() {
                     אנו נוקטים אמצעי אבטחה מתקדמים ומעודכנים כדי להגן על המידע
                     שלך, כולל הצפנה, גישה מוגבלת, ניטור פעילות חשודה ושמירה על
                     שרתים מאובטחים. יחד עם זאת, אין מערכת שאינה ניתנת לפריצה
-                    ב-100%.
+                    ב-100%, ולכן אנו לא נישא באחריות לכל נזק הנגרם עקב חדירה לא
+                    מורשית מצד צד שלישי.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="p-4 rounded-lg bg-muted/50 border">
@@ -300,6 +313,7 @@ export default function PrivacyPolicyPage() {
                     <li>✓ לבקש מחיקה או הגבלת שימוש במידע</li>
                     <li>✓ לקבל עותק של המידע בפורמט אלקטרוני נוח</li>
                     <li>✓ להתנגד לעיבוד מידע למטרות שיווקיות</li>
+                    <li>✓ להגיש בקשה או תלונה לרשות הגנת הפרטיות המתאימה</li>
                   </ul>
                 </div>
               </div>
@@ -311,7 +325,9 @@ export default function PrivacyPolicyPage() {
                   <p className="text-muted-foreground">
                     אנו משתמשים ב-Cookies ובטכנולוגיות דומות לשיפור חוויית
                     המשתמש והבנת התנהגות באתר. ניתן לחסום Cookies דרך הדפדפן, אך
-                    זה עלול להשפיע על פונקציות מסוימות באתר.
+                    זה עלול להשפיע על פונקציות מסוימות באתר. שימוש באתר מהווה
+                    הסכמה לשימוש בטכנולוגיות אלו, אלא אם ניתנה הסכמה אחרת
+                    מפורשת.
                   </p>
                 </div>
               </div>
@@ -322,7 +338,7 @@ export default function PrivacyPolicyPage() {
                 <div className="pr-0">
                   <p className="text-muted-foreground mb-3">
                     אנו שומרים מידע רק למשך הזמן הנדרש למטרות חוקיות, שירותיות
-                    או משפטיות:
+                    או משפטיות, ולא מעבר לכך:
                   </p>
                   <ul className="space-y-2 text-muted-foreground">
                     <li>• פניות: עד 2 שנים לאחר סיום התכתבות</li>
@@ -340,7 +356,7 @@ export default function PrivacyPolicyPage() {
                   <p className="text-muted-foreground">
                     האתר אינו מיועד לקטינים מתחת לגיל 18 ואינו אוסף מידע מהם
                     במכוון. אם אתה הורה ומגלה שילדך מסר מידע, אנא פנה אלינו
-                    למחיקה.
+                    למחיקה מיידית.
                   </p>
                 </div>
               </div>
@@ -350,9 +366,9 @@ export default function PrivacyPolicyPage() {
                 <h2 className="text-2xl font-bold">9. שינויים במדיניות</h2>
                 <div className="pr-0">
                   <p className="text-muted-foreground">
-                    אנו עשויים לעדכן מדיניות זו מעת לעת. שינויים משמעותיים
-                    יפורסמו באתר עם תאריך עדכון חדש. שימוש מתמשך באתר מהווה
-                    הסכמה למדיניות המעודכנת.
+                    אנו עשויים לעדכן מדיניות זו מעת לעת. שינויים מהותיים יפורסמו
+                    באתר עם תאריך עדכון חדש. שימוש מתמשך באתר מהווה הסכמה
+                    למדיניות המעודכנת.
                   </p>
                 </div>
               </div>
@@ -381,16 +397,16 @@ export default function PrivacyPolicyPage() {
                   </p>
                 </div>
               </div>
-            </div>
 
-            {/* Back to home */}
-            <div className="mt-12 text-center">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-              >
-                ← חזרה לדף הבית
-              </Link>
+              {/* Back to home */}
+              <div className="mt-12 text-center">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  ← חזרה לדף הבית
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,16 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Home, ArrowRight, Search } from "lucide-react";
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Home, ArrowRight, Search } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'דף לא נמצא (404) | Weby – אוריאל',
+  description: 'הדף שחיפשת לא קיים. חזרה לדף הבית או צור קשר לעזרה.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function NotFound() {
   return (
@@ -33,22 +43,22 @@ export default function NotFound() {
         <div className="border-t pt-8">
           <p className="text-sm text-muted-foreground mb-4">דפים פופולריים:</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link 
-              href="/services" 
+            <Link
+              href="/services"
               className="text-sm hover:text-primary transition-colors"
             >
               השירותים שלי
             </Link>
             <span className="text-muted-foreground">•</span>
-            <Link 
-              href="/portfolio" 
+            <Link
+              href="/portfolio"
               className="text-sm hover:text-primary transition-colors"
             >
               אתרים שבניתי
             </Link>
             <span className="text-muted-foreground">•</span>
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className="text-sm hover:text-primary transition-colors"
             >
               אודות

@@ -1,13 +1,19 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'הפורטפוליו שלי - פרויקטים שבניתי',
+  title: 'פורטפוליו | Weby – אוריאל בניית אתרים',
   description:
-    "מבחר פרויקטים שבניתי: צ'אטבוט AI, Blockchain, E-commerce, ועוד. טכנולוגיות: React, Next.js, TypeScript, Python, AI.",
+    "צפה במבחר פרויקטים מקצועיים: אתרי Next.js, אתרי React, צ'אטבוטים AI, פתרונות Blockchain וחנויות E-commerce. עבודות אמיתיות של אוריאל.",
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: 'הפורטפוליו שלי - אוריאל בניית אתרים',
+    title: 'פורטפוליו | Weby – אוריאל בניית אתרים',
     description:
-      '51 פרויקטים מגוונים: AI, Blockchain, E-commerce, ואפליקציות web מתקדמות',
+      'מבחר פרויקטים מגוונים: אתרים מקצועיים, Chatbot AI, Blockchain, E-commerce, וטכנולוגיות מתקדמות ליצירת פתרונות דיגיטליים',
+    type: 'website',
+    locale: 'he_IL',
   },
 };
 

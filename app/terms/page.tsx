@@ -11,10 +11,21 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'תנאי שימוש',
-  description: 'תנאי השימוש של Weby - בניית אתרים ואפליקציות',
+  title: 'תנאי שימוש | Weby – אוריאל בניית אתרים',
+  description:
+    'תנאי השימוש של Weby לבניית אתרים ואפליקציות: הסכם משתמש, זכויות יוצרים, הגבלת אחריות, תנאי תשלום ושירות. קרא את התנאים המלאים כאן.',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'תנאי שימוש | Weby',
+    description:
+      'תנאי השימוש המסדירים את הקשר בין המשתמש לשירותי Weby: זכויות, חובות והתחייבויות',
+    type: 'website',
+    locale: 'he_IL',
+  },
 };
-
 export default function TermsOfServicePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
@@ -44,10 +55,11 @@ export default function TermsOfServicePage() {
             <div className="prose prose-lg max-w-none mb-12">
               <div className="p-6 rounded-xl bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20">
                 <p className="text-foreground/90 leading-relaxed m-0">
-                  ברוכים הבאים לאתר של אוריאל – פיתוח תוכנה, אתרים ואפליקציות.
-                  תנאי שימוש אלה מסדירים את השימוש שלך באתר ובשירותים המוצעים
-                  בו. על ידי גישה לאתר או שימוש בו, אתה מסכים לתנאי שימוש אלה
-                  במלואם.
+                  ברוכים הבאים ל-Weby – פיתוח תוכנה, אתרים ואפליקציות. תנאי
+                  שימוש אלו מהווים הסכם משפטי מחייב בין המשתמש לבין החברה
+                  המפעילה את האתר והשירותים המוצעים בו. בשימוש באתר או בכל שירות
+                  הניתן על ידינו, המשתמש מסכים לכל התנאים המפורטים להלן. במידה
+                  ואינך מסכים לתנאים, אין לעשות שימוש באתר או בשירותים כלשהם.
                 </p>
               </div>
             </div>
@@ -64,22 +76,26 @@ export default function TermsOfServicePage() {
                 </div>
                 <div className="pr-15 space-y-3">
                   <p className="text-muted-foreground">
-                    השימוש באתר מהווה הסכמה מלאה ומחייבת לתנאי שימוש אלה. אם
-                    אינך מסכים לתנאים, אנא הימנע משימוש באתר.
+                    שימוש באתר מהווה הסכמה מלאה, בלתי מותנית ומחייבת למכלול תנאי
+                    השימוש המפורטים להלן. אם אינך מסכים לתנאים, יש להימנע משימוש
+                    בכל שירותי האתר.
                   </p>
                   <div className="p-4 rounded-lg bg-muted/30 border-r-4 border-primary/50">
                     <p className="text-foreground/90">
-                      ✓ השימוש באתר מיועד למטרות חוקיות בלבד
+                      ✓ השימוש באתר מותנה במטרות חוקיות בלבד ובהתאם לחוקי מדינת
+                      ישראל
                     </p>
                   </div>
                   <div className="p-4 rounded-lg bg-muted/30 border-r-4 border-primary/50">
                     <p className="text-foreground/90">
-                      ✓ אנו שומרים את הזכות לשנות תנאים אלה בכל עת
+                      ✓ החברה רשאית לשנות או לעדכן את תנאי השימוש בכל עת וללא
+                      הודעה מוקדמת, והמשך השימוש באתר לאחר שינוי מהווה הסכמה
+                      מחייבת לתנאים החדשים
                     </p>
                   </div>
                   <div className="p-4 rounded-lg bg-muted/30 border-r-4 border-primary/50">
                     <p className="text-foreground/90">
-                      ✓ המשך שימוש לאחר שינוי מהווה הסכמה לתנאים המעודכנים
+                      ✓ המשתמש אחראי לעקוב אחר תנאי השימוש המעודכנים
                     </p>
                   </div>
                 </div>
@@ -95,7 +111,7 @@ export default function TermsOfServicePage() {
                 </div>
                 <div className="pr-15 space-y-3">
                   <p className="text-muted-foreground mb-4">
-                    אנחנו מספקים שירותי פיתוח תוכנה ואתרים, לרבות:
+                    אנו מספקים שירותי פיתוח תוכנה ואתרים, לרבות אך לא מוגבל ל:
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="p-4 rounded-lg bg-muted/50 border">
@@ -119,13 +135,14 @@ export default function TermsOfServicePage() {
                     <div className="p-4 rounded-lg bg-muted/50 border">
                       <p className="font-semibold mb-1">🔧 תחזוקה ותמיכה</p>
                       <p className="text-sm text-muted-foreground">
-                        עדכונים ותיקונים
+                        עדכונים, תיקונים ותמיכה טכנית
                       </p>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground mt-4">
                     * השירותים כפופים לזמינות, להסכמים מסחריים נפרדים ולהערכה
-                    מקצועית
+                    מקצועית. אין לראות בהם התחייבות להשלמת פרויקט או עמידה
+                    במסגרת זמן מוגדרת.
                   </p>
                 </div>
               </div>
@@ -145,11 +162,18 @@ export default function TermsOfServicePage() {
                     <h3 className="text-lg font-semibold mb-3">תוכן האתר</h3>
                     <ul className="space-y-2 text-muted-foreground">
                       <li>
-                        • כל התוכן באתר (טקסטים, תמונות, לוגו, קוד) שייך לאוריאל
+                        • כל התוכן באתר (טקסטים, תמונות, לוגו, קוד, גרפיקות וכל
+                        רכיב אחר) מוגן בזכויות יוצרים ובקניין רוחני ומוחזק על
+                        ידי החברה או גורמים מורשים מטעם החברה
                       </li>
-                      <li>• אסור להעתיק או לשכפל תוכן ללא אישור מפורש בכתב</li>
-                      <li>• שימוש מסחרי בתוכן אסור ללא רישיון מתאים</li>
-                      <li>• הפרת זכויות יוצרים תגרור צעדים משפטיים</li>
+                      <li>
+                        • אין להעתיק, לשכפל, להפיץ או להשתמש בתוכן האתר לצרכים
+                        מסחריים ללא אישור כתוב ומפורש מהחברה
+                      </li>
+                      <li>
+                        • הפרת זכויות יוצרים או שימוש בתוכן האתר ללא אישור חוקי
+                        עלולה לגרור צעדים משפטיים, לרבות דרישה לפיצוי כספי
+                      </li>
                     </ul>
                   </div>
                   <div className="p-6 rounded-lg bg-gradient-to-r from-purple-500/5 to-purple-500/10 border border-purple-500/20">
@@ -157,12 +181,22 @@ export default function TermsOfServicePage() {
                       פרויקטים שפותחו
                     </h3>
                     <ul className="space-y-2 text-muted-foreground">
-                      <li>• זכויות על הקוד נקבעות בהסכם ספציפי לכל פרויקט</li>
                       <li>
-                        • ברירת מחדל: הלקוח מקבל זכויות שימוש, לא בעלות על הקוד
+                        • זכויות על קוד המקור או התוצר נקבעות לפי ההסכם הספציפי
+                        לכל פרויקט
                       </li>
-                      <li>• רישיון מלא ניתן בתשלום נוסף</li>
-                      <li>• אנו שומרים זכות להציג פרויקטים בתיק העבודות</li>
+                      <li>
+                        • ברירת המחדל: הלקוח מקבל זכויות שימוש בלבד, ולא בעלות
+                        על הקוד
+                      </li>
+                      <li>
+                        • ניתן לרכוש רישיון מלא או זכויות נוספות בהסכם נפרד
+                        ובתשלום נוסף
+                      </li>
+                      <li>
+                        • החברה רשאית להציג פרויקטים בתיק העבודות שלה, אלא אם
+                        הוסכם אחרת בכתב
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -178,28 +212,33 @@ export default function TermsOfServicePage() {
                 </div>
                 <div className="pr-15 space-y-3">
                   <p className="text-muted-foreground mb-4">
-                    השימושים הבאים אסורים באתר:
+                    שימושים הבאים אסורים לחלוטין באתר או בשירותים המוצעים:
                   </p>
                   <div className="space-y-3">
                     <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/20">
-                      ❌ פעילות בלתי חוקית – כל שימוש המפר חוק
+                      ❌ כל פעילות בלתי חוקית או המפרת חוקים ותקנות
                     </div>
                     <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/20">
-                      ❌ הפרעה לשירות – ניסיונות לפגוע בתפקוד האתר
+                      ❌ פגיעה או ניסיון לפגוע בזמינות האתר או במערכות השירות
                     </div>
                     <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/20">
-                      ❌ העתקת תוכן – שכפול או הפצה ללא אישור
+                      ❌ העתקת תוכן, שכפול או הפצה ללא אישור חוקי
                     </div>
                     <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/20">
-                      ❌ ספאם – שליחת תוכן פרסומי לא רצוי
+                      ❌ ספאם או שליחת תוכן פרסומי לא רצוי
                     </div>
                     <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/20">
-                      ❌ פריצה – ניסיון לגישה לא מורשית למערכות
+                      ❌ ניסיון פריצה או גישה לא מורשית למערכות או חשבונות
                     </div>
                     <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/20">
-                      ❌ תוכן פוגעני – הטרדה, גזענות או תוכן מזיק
+                      ❌ הפצה או פרסום של תוכן פוגעני, מסית או מפלה
                     </div>
                   </div>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    החברה רשאית לנקוט בכל אמצעי חוקי במקרה של הפרת תנאי שימוש
+                    אלו, לרבות חסימה, השעיה או פעולה משפטית, מבלי לפגוע
+                    בזכויותיה המשפטיות המלאות.
+                  </p>
                 </div>
               </div>
 
@@ -218,19 +257,17 @@ export default function TermsOfServicePage() {
                     </h3>
                     <ul className="space-y-2 text-muted-foreground">
                       <li>
-                        • האתר והשירותים מסופקים "כמות שהם" ללא אחריות מפורשת או
-                        משתמעת
+                        • האתר והשירותים ניתנים לשימוש "כמות שהם" וללא כל
+                        התחייבות למדיוק, שלמות, יעילות או התאמה ספציפית
                       </li>
                       <li>
-                        • אנו לא אחראים לנזקים עקיפים, תוצאתיים או מיוחדים
-                        הנובעים משימוש באתר
+                        • החברה אינה אחראית לנזקים עקיפים, תוצאתיים או מיוחדים
+                        הנגרמים כתוצאה משימוש באתר או בשירותים
                       </li>
+                      <li>• אין התחייבות לזמינות רציפה 24/7 של השירותים</li>
                       <li>
-                        • אנו לא מתחייבים שהשירות יהיה זמין 24/7 ללא הפסקות
-                      </li>
-                      <li>
-                        • אנו עושים מאמץ סביר לספק שירות איכותי אך לא מבטיחים
-                        תוצאות ספציפיות
+                        • כל הבטחה או הצגה של תוצאה, יעילות או רווחיות אינה
+                        מהווה התחייבות משפטית
                       </li>
                     </ul>
                   </div>
@@ -240,22 +277,23 @@ export default function TermsOfServicePage() {
                     </h3>
                     <ul className="space-y-2 text-muted-foreground">
                       <li>
-                        • האתר עשוי לכלול קישורים לאתרים חיצוניים – אנו לא
-                        אחראים לתוכן שלהם
+                        • האתר עשוי להכיל קישורים לשירותי צד שלישי – החברה אינה
+                        אחראית לתוכן, לנזקים או להפרת זכויות הנובעים משימוש בהם
                       </li>
                       <li>
-                        • שירותי צד שלישי (כגון Tawk.to, Google Analytics)
-                        כפופים לתנאי השימוש שלהם
+                        • שירותים כמו Tawk.to, Google Analytics וכל שירות צד
+                        שלישי כפופים לתנאי השימוש שלהם בלבד
                       </li>
                       <li>
-                        • לא נישא באחריות לנזק הנגרם משימוש בשירותי צד שלישי
+                        • אין לחברה כל אחריות לנזקים, אובדן מידע או הפרת זכויות
+                        הנגרמים משימוש בשירותי צד שלישי
                       </li>
                     </ul>
                   </div>
                   <div className="p-6 rounded-lg bg-amber-500/5 border border-amber-500/20">
                     <p className="text-sm text-muted-foreground">
-                      ⚠️ חשוב: הגבלת האחריות כפופה לחוק הגנת הצרכן הישראלי ולא
-                      ניתן לשלול זכויות הקבועות בחוק.
+                      ⚠️ הגבלת האחריות לא פוגעת בזכויות הצרכן המוקנות לפי חוק
+                      הגנת הצרכן הישראלי או כל חוק מחייב אחר.
                     </p>
                   </div>
                 </div>
@@ -271,130 +309,116 @@ export default function TermsOfServicePage() {
                 </div>
                 <div className="pr-15 space-y-3">
                   <p className="text-muted-foreground mb-4">
-                    שירותי פיתוח כפופים להסכמים נפרדים:
+                    כל פרויקט או שירות מותנה בהסכם מסחרי נפרד, המפרט את התנאים
+                    המלאים:
                   </p>
                   <div className="grid gap-3">
                     <div className="p-4 rounded-lg bg-muted/30 border">
                       <p className="font-semibold mb-1">📋 הסכם פרויקט</p>
                       <p className="text-sm text-muted-foreground">
-                        כל פרויקט כרוך בהסכם ספציפי המפרט: היקף, לוחות זמנים,
-                        תשלום, זכויות
+                        כולל היקף העבודה, לוחות זמנים, עלויות וזכויות שימוש
                       </p>
                     </div>
                     <div className="p-4 rounded-lg bg-muted/30 border">
                       <p className="font-semibold mb-1">💰 תנאי תשלום</p>
                       <p className="text-sm text-muted-foreground">
-                        תשלום מקדמה 50%, יתרה עם השלמת הפרויקט. ללא החזר כספי
-                        לאחר תחילת העבודה
+                        מקדמה של 50% נדרשת להתחלת העבודה. יתרה תידרש עם סיום
+                        הפרויקט. החזר כספי יתאפשר רק בהתאם להסכם מראש.
                       </p>
                     </div>
                     <div className="p-4 rounded-lg bg-muted/30 border">
                       <p className="font-semibold mb-1">⏱️ לוחות זמנים</p>
                       <p className="text-sm text-muted-foreground">
-                        מועדים משוערים בלבד. עיכובים עקב שינויים מצד הלקוח לא
-                        יזכו בפיצוי
+                        מועדים הם הערכה בלבד. עיכובים עקב דרישות המשתמש או
+                        שינויים בפרויקט אינם מחייבים פיצוי
                       </p>
                     </div>
                     <div className="p-4 rounded-lg bg-muted/30 border">
                       <p className="font-semibold mb-1">🔄 שינויים ותוספות</p>
                       <p className="text-sm text-muted-foreground">
-                        שינויים מעבר להיקף המוסכם כרוכים בתוספת תשלום ועדכון
-                        לוחות זמנים
+                        כל שינוי בהיקף העבודה או בדרישות יחייב הסכם ותוספת תשלום
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Section 7: ביטול והפסקת שירות */}
+              {/* Section 7: Force Majeure */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold">7. ביטול והפסקת שירות</h2>
-                <div className="pr-0 space-y-3">
-                  <div className="p-6 rounded-lg bg-muted/50 border">
-                    <h3 className="text-lg font-semibold mb-3">
-                      ביטול מצד הלקוח
-                    </h3>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>• ניתן לבטל פרויקט בכל שלב עם הודעה בכתב</li>
-                      <li>• עבודה שבוצעה עד לביטול תחויב במלואה</li>
-                      <li>• מקדמה ששולמה לא תוחזר</li>
-                      <li>
-                        • קבצי עבודה יועברו ללקוח רק לאחר סילוק מלא של החשבון
-                      </li>
-                    </ul>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center flex-shrink-0">
+                    <AlertCircle className="h-6 w-6 text-primary" />
                   </div>
-
-                  <div className="p-6 rounded-lg bg-muted/50 border">
-                    <h3 className="text-lg font-semibold mb-3">
-                      הפסקת שירות מצדנו
-                    </h3>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>• שומרים זכות להפסיק שירות במקרה של הפרת תנאים</li>
-                      <li>• אי תשלום במועד יוביל להשעיית שירות</li>
-                      <li>• שימוש לרעה באתר או בשירותים יגרור סגירת חשבון</li>
-                    </ul>
-                  </div>
+                  <h2 className="text-2xl font-bold">
+                    7. כוח עליון (Force Majeure)
+                  </h2>
                 </div>
-              </div>
-
-              {/* Section 8: שינויים בתנאי השימוש */}
-              <div className="space-y-4">
-                <h2 className="text-2xl font-bold">8. שינויים בתנאי השימוש</h2>
-                <div className="pr-0">
-                  <p className="text-muted-foreground mb-3">
-                    אנו שומרים את הזכות לעדכן תנאי שימוש אלה בכל עת:
+                <div className="pr-15 space-y-3">
+                  <p className="text-muted-foreground mb-2">
+                    החברה אינה אחראית לעיכובים או כשל בשירותים הנובעים מאירועים
+                    בלתי צפויים, לרבות אך לא מוגבל ל:
                   </p>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• שינויים יפורסמו באתר עם תאריך עדכון</li>
-                    <li>• שינויים מהותיים יודעו במייל (אם סופק)</li>
-                    <li>• המשך שימוש באתר מהווה הסכמה לתנאים החדשים</li>
+                  <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+                    <li>אסונות טבע, שריפות, שטפונות או פגעי מזג אוויר</li>
+                    <li>שביתות, מרידות או מחאות ציבוריות</li>
+                    <li>
+                      תקלות טכניות במערכות אינטרנט, שרתים או ספקי צד שלישי
+                    </li>
+                    <li>פעולות מלחמה, טרור או פעולות ממשלתיות</li>
                   </ul>
                 </div>
               </div>
 
-              {/* Section 9: פרטיות */}
+              {/* Section 8: פרטיות וקוקיז */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold">9. פרטיות</h2>
-                <div className="pr-0">
-                  <p className="text-muted-foreground mb-3">
-                    איסוף ושימוש במידע כפוף למדיניות פרטיות שלנו:
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Shield className="h-6 w-6 text-primary" />
+                  </div>
+                  <h2 className="text-2xl font-bold">8. פרטיות וקוקיז</h2>
+                </div>
+                <div className="pr-15 space-y-3">
+                  <p className="text-muted-foreground mb-2">
+                    שימוש באתר כרוך בקבלת מדיניות הפרטיות שלנו, כולל:
                   </p>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• אנו אוספים מידע לשם תפעול האתר ושירותים</li>
-                    <li>• מידע אישי לא יימסר לצד שלישי ללא הסכמה</li>
-                    <li>• ניתן לבקש עיון, עדכון או מחיקה של המידע האישי</li>
+                  <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+                    <li>שמירת מידע אישי לצורך קשר ושירותים בלבד</li>
                     <li>
-                      • אנו עושים מאמצים להגן על המידע אך אין אחריות מוחלטת
+                      שימוש בקוקיז או כלי ניתוח צד שלישי (Google Analytics,
+                      Tawk.to)
+                    </li>
+                    <li>
+                      אין הפצת מידע אישי לצד שלישי ללא הסכמה, למעט דרישה חוקית
                     </li>
                   </ul>
                 </div>
               </div>
 
-              {/* Section 10: דין וסמכות */}
+              {/* Section 9: דין וסמכות */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold">10. דין וסמכות</h2>
-                <div className="pr-0">
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• כל הסכסוכים כפופים לדין הישראלי</li>
-                    <li>• סמכות השיפוט הבלעדית – בתי המשפט בתל אביב</li>
-                    <li>
-                      • אם סעיף מסוים יוכרז כבלתי חוקי – יתר הסעיפים נשארים
-                      בתוקף
-                    </li>
-                    <li>• התנאים ניתנים להתאמה לפי דרישות חוק מחייבות</li>
-                  </ul>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Gavel className="h-6 w-6 text-primary" />
+                  </div>
+                  <h2 className="text-2xl font-bold">9. דין וסמכות</h2>
+                </div>
+                <div className="pr-15 space-y-3">
+                  <p className="text-muted-foreground">
+                    תנאי שימוש אלו כפופים לחוקי מדינת ישראל בלבד. כל מחלוקת בין
+                    הצדדים תובא בפני בתי המשפט המוסמכים בעיר תל אביב.
+                  </p>
                 </div>
               </div>
-            </div>
 
-            {/* Back to home */}
-            <div className="mt-12 text-center">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-              >
-                ← חזרה לדף הבית
-              </Link>
+              {/* Button at the bottom */}
+              <div className="mt-12 text-center">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  ← חזרה לדף הבית
+                </Link>
+              </div>
             </div>
           </div>
         </div>

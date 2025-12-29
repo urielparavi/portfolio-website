@@ -22,45 +22,49 @@ const heebo = Heebo({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.uriel-sites.com'),
   title: {
-    default: 'אוריאל - פיתוח תוכנה, אתרים ואפליקציות | מפתח Full Stack',
-    template: '%s | אוריאל - פיתוח תוכנה',
+    default: 'בניית אתרים לעסקים | Weby – אוריאל אתרי תדמית ונחיתה',
+    template: '%s | Weby – אוריאל בניית אתרים',
   },
+
   description:
-    'פיתוח תוכנה, אתרים ואפליקציות בהתאמה אישית לעסק שלך. מתמחה ב‑Web Development, כולל אתרי נחיתה, אתרי תדמית, חנויות מקוונות ועוד.',
-  keywords: [
-    'בניית אתרים',
-    'פיתוח אתרים',
-    'מפתח Full Stack',
-    'אתרי נחיתה',
-    'אתרי תדמית',
-    'חנות אונליין',
-    'Next.js',
-    'React',
-    'TypeScript',
-    'אוריאל',
-  ],
-  authors: [{ name: 'אוריאל', url: 'https://www.uriel-sites.com' }],
-  creator: 'אוריאל',
-  publisher: 'אוריאל',
+    'בניית אתרים מקצועית לעסקים עם Weby: אתרי תדמית, אתרי נחיתה וחנויות אונליין. פיתוח מהיר, מודרני ומותאם אישית על ידי אוריאל. החל מ-₪1,500.',
+
+  authors: [{ name: 'אוריאל - Weby', url: 'https://www.uriel-sites.com' }],
+  creator: 'Weby - אוריאל',
+  publisher: 'Weby',
+
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
+
   openGraph: {
     type: 'website',
     locale: 'he_IL',
     url: 'https://www.uriel-sites.com',
-    title: 'אוריאל - פיתוח תוכנה, אתרים ואפליקציות | מפתח Full Stack',
+    title: 'בניית אתרים לעסקים | Weby – אוריאל',
     description:
-      'פיתוח תוכנה, אתרים ואפליקציות בהתאמה אישית לעסק שלך. מתמחה ב‑Web Development, כולל אתרי נחיתה, אתרי תדמית, חנויות מקוונות ועוד.',
-    siteName: 'אוריאל - פיתוח תוכנה',
+      'בניית אתרים מקצועית: אתרי תדמית, נחיתה וחנויות אונליין. פיתוח מהיר ומותאם אישית על ידי אוריאל.',
+    siteName: 'Weby – אוריאל בניית אתרים',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Weby - בניית אתרים מקצועית לעסקים',
+      },
+    ],
   },
+
   twitter: {
     card: 'summary_large_image',
-    title: 'אוריאל - פיתוח תוכנה, אתרים ואפליקציות',
-    description: 'פיתוח תוכנה, אתרים ואפליקציות בהתאמה אישית לעסק שלך',
+    title: 'בניית אתרים לעסקים | Weby – אוריאל',
+    description:
+      'אתרי תדמית, נחיתה וחנויות אונליין – בניית אתרים מקצועית על ידי אוריאל',
+    images: ['/og-image.jpg'],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -72,6 +76,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',

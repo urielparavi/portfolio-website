@@ -1,11 +1,19 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "צור קשר - בוא נדבר על הפרויקט שלך",
-  description: "יש לך פרויקט במחשבה? צור קשר עם אוריאל לפיתוח אתרים מקצועיים. אימייל: urielpa308@gmail.com | טלפון: 054-6803661",
+  title: 'צור קשר | Weby – אוריאל בניית אתרים',
+  description:
+    'רוצה לבנות אתר לעסק? צור קשר עם אוריאל מ-Weby לפיתוח אתרים מקצועי ב-React ו-Next.js. קבל ייעוץ חינם!',
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "צור קשר - אוריאל בניית אתרים",
-    description: "בוא נדבר על הפרויקט שלך ונבנה משהו מדהים ביחד",
+    title: 'צור קשר | Weby – אוריאל בניית אתרים',
+    description:
+      'דברו עם אוריאל מ-Weby ונבנה אתר מותאם אישית ומקצועי עבור העסק שלכם',
+    type: 'website',
+    locale: 'he_IL',
   },
 };
 
