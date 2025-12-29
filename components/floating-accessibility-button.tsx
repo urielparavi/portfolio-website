@@ -13,7 +13,7 @@ export function FloatingAccessibilityButton() {
       <button
         ref={buttonRef}
         onClick={() => setIsOpen(true)}
-        className="fixed right-6 top-64 md:top-40 z-50 group focus:outline-none focus-visible:ring-4 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-full"
+        className="fixed right-6 bottom-[104px] z-50 group focus:outline-none focus-visible:ring-4 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-full"
         aria-label="פתח תפריט נגישות"
         aria-expanded={isOpen}
         aria-haspopup="dialog"
