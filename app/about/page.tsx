@@ -22,13 +22,19 @@ import Link from 'next/link';
 import { FadeIn } from '@/components/fade-in';
 
 export const metadata: Metadata = {
-  title: 'אודות - הסיפור שלי',
+  title: 'אודות | Weby – אוריאל בניית אתרים לעסקים',
   description:
-    'היי, אני אוריאל - מפתח Full Stack עם 6+ שנות ניסיון בפיתוח תוכנה, אתרים ואפליקציות מתקדמות. מתמחה ב-React, Next.js, Node.js ופיתוח AI.',
+    'אוריאל – בונה אתרים לעסקים עם ניסיון של מעל 6 שנים. מתמחה בבניית אתרי תדמית, אתרי נחיתה וחנויות אונליין בטכנולוגיות מודרניות.',
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: 'אודות - אוריאל בניית אתרים',
+    title: 'אודות | Weby – אוריאל בניית אתרים',
     description:
-      'הכירו את אוריאל - מפתח Full Stack עם 6+ שנות ניסיון. מתמחה ב-React, Next.js, AI ו-E-commerce.',
+      'הכירו את אוריאל מ-Weby – מומחה לבניית אתרים עם 6+ שנות ניסיון: אתרי תדמית, נחיתה וחנויות אונליין בטכנולוגיות מודרניות',
+    type: 'website',
+    locale: 'he_IL',
   },
 };
 
@@ -162,7 +168,7 @@ export default function AboutPage() {
               <FadeIn>
                 <div>
                   <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                    היי, אני אוריאל 👋
+                    היי, אני אוריאל – בונה אתרים לעסקים 👋
                   </h1>
                   <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                     <p>

@@ -16,8 +16,8 @@ export function CountdownBanner() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Target date: 01.02.2025 23:59:59
   const targetDate = new Date('2026-02-01T23:59:59').getTime();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export function CountdownBanner() {
       const difference = targetDate - now;
 
       if (difference <= 0) {
-        return null; // Timer expired
+        return null;
       }
 
       return {
@@ -39,25 +39,34 @@ export function CountdownBanner() {
       };
     };
 
-    // Initial calculation
     setTimeLeft(calculateTimeLeft());
 
-    // Update every second
     const timer = setInterval(() => {
       const newTimeLeft = calculateTimeLeft();
       setTimeLeft(newTimeLeft);
 
-      // Auto-hide when expired
       if (!newTimeLeft) {
         setIsVisible(false);
       }
     }, 1000);
 
-    return () => clearInterval(timer);
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [targetDate]);
 
-  // Don't render on server or if hidden or expired
-  if (!isMounted || !isVisible || !timeLeft) {
+  if (!isMounted || !isVisible || !timeLeft || isScrolled) {
     return null;
   }
 
@@ -66,13 +75,16 @@ export function CountdownBanner() {
   };
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white overflow-hidden">
-      {/* Animated background effect */}
+    <div
+      className="relative w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white overflow-hidden"
+      style={{
+        animation: 'gentleElastic 0.65s cubic-bezier(0.34, 1.15, 0.64, 1)',
+      }}
+    >
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse" />
 
       <div className="container mx-auto px-4 py-3 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center">
-          {/* Icon + Message */}
           <div className="flex items-center gap-2">
             <Clock className="h-5 w-5 animate-pulse" />
             <span className="text-sm md:text-base font-bold">
@@ -80,7 +92,6 @@ export function CountdownBanner() {
             </span>
           </div>
 
-          {/* Countdown Timer */}
           <div className="flex items-center gap-2">
             <span className="text-xs md:text-sm font-medium opacity-90">
               נותרו:
@@ -96,7 +107,6 @@ export function CountdownBanner() {
             </div>
           </div>
 
-          {/* CTA Button */}
           <Button
             asChild
             size="sm"
@@ -108,7 +118,6 @@ export function CountdownBanner() {
         </div>
       </div>
 
-      {/* Close Button */}
       <button
         onClick={handleClose}
         className="absolute top-2 left-2 z-20 p-1 rounded-full hover:bg-white/20 transition-colors"
@@ -116,6 +125,28 @@ export function CountdownBanner() {
       >
         <X className="h-4 w-4" />
       </button>
+
+      <style jsx>{`
+        @keyframes gentleElastic {
+          0% {
+            transform: translateY(-100%);
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.9;
+          }
+          65% {
+            transform: translateY(0.5%);
+          }
+          80% {
+            transform: translateY(-0.2%);
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </div>
   );
 }
