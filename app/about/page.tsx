@@ -270,7 +270,7 @@ export default function AboutPage() {
                 המסע שלי
               </h2>
               <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                7+ שנים של למידה, בניה והתפתחות מתמדת
+                6+ שנים של למידה, בניה והתפתחות מתמדת
               </p>
 
               <div className="space-y-8">

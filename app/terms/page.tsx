@@ -12,7 +12,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'תנאי שימוש',
-  description: 'תנאי השימוש של אוריאל - פיתוח תוכנה, אתרים ואפליקציות',
+  description: 'תנאי השימוש של Weby - בניית אתרים ואפליקציות',
 };
 
 export default function TermsOfServicePage() {

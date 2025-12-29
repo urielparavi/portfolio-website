@@ -4,7 +4,7 @@ import { Shield, Lock, Eye, UserCheck, FileText, Globe } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'מדיניות פרטיות',
-  description: 'מדיניות הפרטיות של אוריאל - פיתוח תוכנה, אתרים ואפליקציות',
+  description: 'מדיניות הפרטיות של Weby - בניית אתרים',
 };
 
 export default function PrivacyPolicyPage() {
