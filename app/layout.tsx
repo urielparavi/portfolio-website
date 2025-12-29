@@ -101,12 +101,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <CountdownBanner />
           <ScrollProgressBar />
           <PageLoadingIndicator />
 
           {children}
 
-          <CountdownBanner />
           <TawkChat />
           <BackToTop />
           <WhatsAppButton />

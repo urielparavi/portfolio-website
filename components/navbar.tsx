@@ -28,7 +28,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link
@@ -61,7 +61,6 @@ export function Navbar() {
               >
                 <span>{link.label}</span>
 
-                {/* Underline only for active link */}
                 {isActive(link.href) && (
                   <span className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-r from-primary/80 via-primary to-primary/80 shadow-sm shadow-primary/50" />
                 )}
