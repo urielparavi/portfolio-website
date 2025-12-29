@@ -11,7 +11,7 @@ import { CountdownBanner } from '@/components/countdown-banner';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 import { TawkChat } from '@/components/tawk-chat';
 import { CookieBanner } from '@/components/cookie-banner';
-import { SkipToMain } from '@/components/skip-to-main'; // ← 1️⃣ הוסף את השורה הזו!
+import { SkipToMain } from '@/components/skip-to-main';
 import { FloatingAccessibilityButton } from '@/components/floating-accessibility-button';
 
 const heebo = Heebo({
@@ -101,11 +101,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <CountdownBanner />
           <ScrollProgressBar />
           <PageLoadingIndicator />
 
           {children}
+
+          <CountdownBanner />
           <TawkChat />
           <BackToTop />
           <WhatsAppButton />

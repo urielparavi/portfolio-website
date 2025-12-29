@@ -14,13 +14,13 @@ import Link from 'next/link';
 import { FadeIn } from '@/components/fade-in';
 
 export const metadata: Metadata = {
-  title: 'השירותים שלי - פיתוח אתרים מקצועי',
+  title: 'השירותים שלי - בניית אתרים',
   description:
-    'שירותי פיתוח אתרים: אתרי נחיתה, אתרי תדמית עסקיים, וחנויות מקוונות. פתרונות מותאמים אישית לכל עסק.',
+    'שירותי בניית אתרים: אתרי נחיתה, אתרי תדמית עסקיים, וחנויות מקוונות. פתרונות מותאמים אישית לכל עסק.',
   openGraph: {
     title: 'השירותים שלי - אוריאל בניית אתרים',
     description:
-      'שירותי פיתוח אתרים מקצועיים: Landing Pages, אתרי תדמית, וחנויות אונליין',
+      'שירותי בניית אתרים: Landing Pages, אתרי תדמית, וחנויות אונליין',
   },
 };
 
@@ -38,7 +38,7 @@ const services = [
       'אינטגרציה עם כלי שיווק',
       'ניתוח וביצועים',
     ],
-    price: 'החל מ-₪1,000',
+    price: 'החל מ-₪1,500',
     color: 'from-blue-500/10 to-cyan-500/10',
     iconColor: 'text-blue-600 dark:text-blue-400',
     highlight: false,
@@ -54,9 +54,9 @@ const services = [
       'בלוג / חדשות (אופציונלי)',
       'פורטפוליו / גלריה',
       'טופס יצירת קשר מתקדם',
-      'SEO מלא ומקיף',
+      'הטמעת SEO באתר',
     ],
-    price: 'החל מ-₪2,500',
+    price: 'החל מ-₪3,000',
     color: 'from-purple-500/10 to-pink-500/10',
     iconColor: 'text-purple-600 dark:text-purple-400',
     highlight: true,
@@ -74,7 +74,7 @@ const services = [
       'אינטגרציה עם מלאי',
       'דוחות ואנליטיקס',
     ],
-    price: 'החל מ-₪6,000',
+    price: 'החל מ-₪7,000',
     color: 'from-green-500/10 to-emerald-500/10',
     iconColor: 'text-green-600 dark:text-green-400',
     highlight: false,
@@ -85,7 +85,7 @@ const additionalServices = [
   'תחזוקה ועדכונים שוטפים',
   'אחסון ודומיין',
   'הדרכה ותמיכה טכנית',
-  'שיפורי SEO מתקדמים',
+  'SEO מובנה באתר',
   'אינטגרציות עם מערכות',
   "הרחבות ופיצ'רים נוספים",
 ];

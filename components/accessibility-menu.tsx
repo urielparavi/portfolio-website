@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, RefObject } from 'react';
 import {
   Accessibility,
   Type,
@@ -133,11 +133,65 @@ const ACCESSIBILITY_CSS = `
 
 interface AccessibilityMenuProps {
   onClose: () => void;
+  returnFocusRef?: RefObject<HTMLElement>;
 }
 
-export function AccessibilityMenu({ onClose }: AccessibilityMenuProps) {
+export function AccessibilityMenu({
+  onClose,
+  returnFocusRef,
+}: AccessibilityMenuProps) {
   const [settings, setSettings] =
     useState<AccessibilitySettings>(DEFAULT_SETTINGS);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Focus trap and ESC key handler
+  useEffect(() => {
+    // Don't auto-focus - let screen readers announce dialog first
+    // Users can Tab to navigate naturally
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    const handleTabKey = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return;
+
+      const focusableElements = menuRef.current?.querySelectorAll(
+        'button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+
+      if (!focusableElements || focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0] as HTMLElement;
+      const lastElement = focusableElements[
+        focusableElements.length - 1
+      ] as HTMLElement;
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscapeKey);
+    document.addEventListener('keydown', handleTabKey);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+      document.removeEventListener('keydown', handleTabKey);
+
+      // Return focus to button
+      if (returnFocusRef?.current) {
+        returnFocusRef.current.focus();
+      }
+    };
+  }, [onClose, returnFocusRef]);
 
   useEffect(() => {
     const styleId = 'accessibility-styles';
@@ -217,82 +271,111 @@ export function AccessibilityMenu({ onClose }: AccessibilityMenuProps) {
         aria-hidden="true"
       />
       <aside
-        className="fixed top-0 right-0 h-screen w-[540px] max-w-[95vw] bg-gradient-to-br from-background via-background to-primary/5 border-r-4 border-primary/20 shadow-[0_0_80px_rgba(0,0,0,0.4)] z-[110] animate-in slide-in-from-right duration-300 flex flex-col"
+        ref={menuRef}
+        className="fixed top-0 right-0 h-screen w-[400px] max-w-[95vw] bg-gradient-to-br from-background via-background to-primary/5 border-r-4 border-primary/20 shadow-[0_0_80px_rgba(0,0,0,0.4)] z-[110] animate-in slide-in-from-right duration-300 flex flex-col"
         role="dialog"
         aria-label="תפריט נגישות"
+        aria-modal="true"
+        aria-describedby="accessibility-description"
         style={{ direction: 'rtl' }}
       >
-        <header className="p-8 border-b border-primary/10 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent backdrop-blur-sm flex-shrink-0">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-4">
+        <header className="p-6 border-b border-primary/10 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent backdrop-blur-sm flex-shrink-0">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-3">
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse" />
-                <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-lg">
-                  <Accessibility className="h-8 w-8 text-primary-foreground" />
+                <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-lg">
+                  <Accessibility
+                    className="h-7 w-7 text-primary-foreground"
+                    aria-hidden="true"
+                  />
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                <h2
+                  id="accessibility-title"
+                  className="text-xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent"
+                >
                   תפריט נגישות
                 </h2>
                 {activeCount > 0 && (
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p
+                    className="text-xs text-muted-foreground mt-1"
+                    aria-live="polite"
+                  >
                     {activeCount} תכונות פעילות
                   </p>
                 )}
               </div>
             </div>
             <Button
+              ref={closeButtonRef}
               variant="ghost"
               size="icon"
               onClick={onClose}
-              aria-label="סגור תפריט נגישות"
+              aria-label="סגור תפריט נגישות (לחץ Escape)"
               className="hover:bg-primary/10 hover:rotate-90 transition-all duration-300 h-10 w-10"
             >
-              <X className="h-6 w-6" />
+              <X className="h-5 w-5" aria-hidden="true" />
             </Button>
           </div>
-          <p className="text-sm text-muted-foreground">
-            התאם את האתר לצרכים שלך בקלות ובמהירות
+          <p
+            id="accessibility-description"
+            className="text-xs text-muted-foreground"
+          >
+            התאם את האתר לצרכים שלך בקלות ובמהירות. השתמש ב-Tab לניווט ו-Enter
+            להפעלה.
           </p>
         </header>
 
-        <div className="flex-1 overflow-y-auto p-8 space-y-8">
+        <div className="flex-1 overflow-y-auto p-6 space-y-6">
           {/* Font Size */}
-          <section className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Type className="h-5 w-5 text-primary" />
+          <section className="space-y-3" aria-labelledby="font-size-heading">
+            <div className="flex items-center gap-2">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
+                <Type className="h-4 w-4 text-primary" aria-hidden="true" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold">גודל טקסט</h3>
+                <h3 id="font-size-heading" className="text-base font-semibold">
+                  גודל טקסט
+                </h3>
                 <p className="text-xs text-muted-foreground">
                   התאם לנוחות הקריאה שלך
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3 bg-muted/50 p-4 rounded-xl">
+            <div
+              className="flex items-center gap-2 bg-muted/50 p-3 rounded-xl"
+              role="group"
+              aria-labelledby="font-size-heading"
+            >
               <Button
                 variant="outline"
                 size="lg"
                 onClick={() => adjustFontSize(-10)}
                 disabled={settings.fontSize <= 80}
-                className="flex-1 h-12 font-medium hover:bg-primary/10 hover:border-primary/50 transition-all disabled:opacity-50"
+                aria-label="הקטן גודל טקסט"
+                className="flex-1 h-11 text-sm font-medium hover:bg-primary/10 hover:border-primary/50 transition-all disabled:opacity-50"
               >
                 הקטן
               </Button>
-              <div className="min-w-[90px] text-center">
-                <div className="text-2xl font-bold text-primary">
+              <div
+                className="min-w-[70px] text-center"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <div className="text-xl font-bold text-primary">
                   {settings.fontSize}%
                 </div>
-                <div className="text-xs text-muted-foreground">גודל נוכחי</div>
+                <div className="text-[10px] text-muted-foreground">נוכחי</div>
               </div>
               <Button
                 variant="outline"
                 size="lg"
                 onClick={() => adjustFontSize(10)}
                 disabled={settings.fontSize >= 150}
-                className="flex-1 h-12 font-medium hover:bg-primary/10 hover:border-primary/50 transition-all disabled:opacity-50"
+                aria-label="הגדל גודל טקסט"
+                className="flex-1 h-11 text-sm font-medium hover:bg-primary/10 hover:border-primary/50 transition-all disabled:opacity-50"
               >
                 הגדל
               </Button>
@@ -300,35 +383,45 @@ export function AccessibilityMenu({ onClose }: AccessibilityMenuProps) {
           </section>
 
           {/* Contrast Modes */}
-          <section className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Contrast className="h-5 w-5 text-primary" />
+          <section className="space-y-3" aria-labelledby="contrast-heading">
+            <div className="flex items-center gap-2">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
+                <Contrast className="h-4 w-4 text-primary" aria-hidden="true" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold">ניגודיות</h3>
+                <h3 id="contrast-heading" className="text-base font-semibold">
+                  ניגודיות
+                </h3>
                 <p className="text-xs text-muted-foreground">
-                  בחר את מצב הצבעים המועדף
+                  בחר את מצב הצבעים
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div
+              className="grid grid-cols-2 gap-2"
+              role="radiogroup"
+              aria-labelledby="contrast-heading"
+            >
               {CONTRAST_OPTIONS.map(({ value, label, icon: Icon }) => (
                 <button
                   key={value}
                   onClick={() => updateSetting('contrast', value)}
-                  className={`group relative p-4 rounded-xl border-2 transition-all duration-300 font-medium h-16 flex items-center justify-center gap-2 transform-gpu ${
+                  role="radio"
+                  aria-checked={settings.contrast === value}
+                  aria-label={`ניגודיות ${label}`}
+                  className={`group relative p-3 rounded-xl border-2 transition-all duration-300 font-medium h-14 flex items-center justify-center gap-2 transform-gpu text-sm ${
                     settings.contrast === value
-                      ? 'border-primary bg-gradient-to-br from-primary/20 to-primary/10 shadow-lg shadow-primary/20 scale-105'
-                      : 'border-muted hover:border-primary/50 hover:bg-primary/5 hover:scale-105'
+                      ? 'border-primary bg-gradient-to-br from-primary/20 to-primary/10 shadow-lg shadow-primary/20 scale-[1.03]'
+                      : 'border-muted hover:border-primary/50 hover:bg-primary/5 hover:scale-[1.03]'
                   }`}
                 >
                   <Icon
-                    className={`h-5 w-5 transition-all ${
+                    className={`h-4 w-4 transition-all ${
                       settings.contrast === value
                         ? 'text-primary'
                         : 'text-muted-foreground group-hover:text-primary'
                     }`}
+                    aria-hidden="true"
                   />
                   <span
                     className={
@@ -338,9 +431,12 @@ export function AccessibilityMenu({ onClose }: AccessibilityMenuProps) {
                     {label}
                   </span>
                   {settings.contrast === value && (
-                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-primary rounded-full flex items-center justify-center">
+                    <div
+                      className="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center"
+                      aria-hidden="true"
+                    >
                       <svg
-                        className="w-3 h-3 text-primary-foreground"
+                        className="w-2.5 h-2.5 text-primary-foreground"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -364,21 +460,31 @@ export function AccessibilityMenu({ onClose }: AccessibilityMenuProps) {
             ({ key, icon: Icon, title, label, description }) => {
               const isActive = settings[key];
               return (
-                <section key={key} className="space-y-3">
-                  <div className="flex items-center gap-3">
+                <section
+                  key={key}
+                  className="space-y-2"
+                  aria-labelledby={`${key}-heading`}
+                >
+                  <div className="flex items-center gap-2">
                     <div
-                      className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
+                      className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all ${
                         isActive ? 'bg-primary/20' : 'bg-muted/50'
                       }`}
                     >
                       <Icon
-                        className={`h-5 w-5 transition-all ${
+                        className={`h-4 w-4 transition-all ${
                           isActive ? 'text-primary' : 'text-muted-foreground'
                         }`}
+                        aria-hidden="true"
                       />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-base font-semibold">{title}</h3>
+                      <h3
+                        id={`${key}-heading`}
+                        className="text-sm font-semibold"
+                      >
+                        {title}
+                      </h3>
                       <p className="text-xs text-muted-foreground">
                         {description}
                       </p>
@@ -386,25 +492,33 @@ export function AccessibilityMenu({ onClose }: AccessibilityMenuProps) {
                   </div>
                   <button
                     onClick={() => updateSetting(key, !isActive)}
-                    className={`group w-full p-5 rounded-xl border-2 transition-all duration-300 transform-gpu ${
+                    role="switch"
+                    aria-checked={isActive}
+                    aria-labelledby={`${key}-heading`}
+                    aria-describedby={`${key}-description`}
+                    className={`group w-full p-4 rounded-xl border-2 transition-all duration-300 transform-gpu ${
                       isActive
                         ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 shadow-md shadow-primary/10'
                         : 'border-muted hover:border-primary/30 hover:bg-primary/5'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-right">
+                      <span
+                        id={`${key}-description`}
+                        className="text-sm font-medium text-right"
+                      >
                         {label}
                       </span>
                       <div
-                        className={`relative w-14 h-7 rounded-full transition-all duration-300 ${
+                        className={`relative w-12 h-6 rounded-full transition-all duration-300 ${
                           isActive ? 'bg-primary shadow-inner' : 'bg-muted'
                         }`}
+                        aria-hidden="true"
                       >
                         <div
-                          className={`absolute top-0.5 w-6 h-6 bg-white rounded-full shadow-md transition-all duration-300 ${
+                          className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow-md transition-all duration-300 ${
                             isActive
-                              ? 'left-0.5 translate-x-[28px]'
+                              ? 'left-0.5 translate-x-[24px]'
                               : 'right-0.5'
                           }`}
                         />
@@ -417,18 +531,25 @@ export function AccessibilityMenu({ onClose }: AccessibilityMenuProps) {
           )}
         </div>
 
-        <footer className="p-8 border-t border-primary/10 bg-gradient-to-t from-primary/5 to-transparent backdrop-blur-sm flex-shrink-0 space-y-3">
-          <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
+        <footer className="p-6 border-t border-primary/10 bg-gradient-to-t from-primary/5 to-transparent backdrop-blur-sm flex-shrink-0 space-y-2">
+          <div
+            className="flex items-center justify-between text-xs text-muted-foreground mb-2"
+            aria-live="polite"
+          >
             <span>כל ההגדרות נשמרות אוטומטית</span>
             {activeCount > 0 && <span>{activeCount} פעילות</span>}
           </div>
           <Button
             variant="outline"
             size="lg"
-            className="w-full gap-2 h-12 text-base font-medium hover:bg-destructive/10 hover:text-destructive hover:border-destructive/50 transition-all group"
+            className="w-full gap-2 h-11 text-sm font-medium hover:bg-destructive/10 hover:text-destructive hover:border-destructive/50 transition-all group"
             onClick={resetSettings}
+            aria-label="אפס את כל הגדרות הנגישות לברירת מחדל"
           >
-            <RotateCcw className="h-5 w-5 group-hover:rotate-180 transition-transform duration-500" />
+            <RotateCcw
+              className="h-4 w-4 group-hover:rotate-180 transition-transform duration-500"
+              aria-hidden="true"
+            />
             איפוס כל ההגדרות
           </Button>
         </footer>

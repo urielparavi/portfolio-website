@@ -27,14 +27,14 @@ export function StructuredData() {
       {
         '@type': 'LocalBusiness',
         '@id': 'https://www.uriel-sites.com/#business',
-        name: 'אוריאל - פיתוח תוכנה, אתרים ואפליקציות',
+        name: 'אוריאל - פיתוח אתרים ',
         url: 'https://www.uriel-sites.com',
         telephone: '+972-54-6803661',
         email: 'urielpa308@gmail.com',
         priceRange: '$$',
         image: 'https://www.uriel-sites.com/logo.png',
         description:
-          'פיתוח תוכנה, אתרים ואפליקציות בהתאמה אישית לעסק שלך. מתמחה ב‑Web Development, כולל אתרי נחיתה, אתרי תדמית, חנויות מקוונות ועוד.',
+          'בניית אתרים בהתאמה אישית לעסק שלך. מתמחה ב‑Web Development, כולל אתרי נחיתה, אתרי תדמית, חנויות מקוונות ועוד.',
         areaServed: {
           '@type': 'Country',
           name: 'Israel',
@@ -74,7 +74,7 @@ export function StructuredData() {
         '@type': 'WebSite',
         '@id': 'https://www.uriel-sites.com/#website',
         url: 'https://www.uriel-sites.com',
-        name: 'אוריאל - פיתוח תוכנה, אתרים ואפליקציות',
+        name: 'בניית אתרים',
         description: 'פיתוח אתרים מותאמים אישית לעסק שלך',
         publisher: {
           '@id': 'https://www.uriel-sites.com/#person',
