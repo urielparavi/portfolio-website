@@ -48,7 +48,7 @@ const projects = [
     technologies: ['Python', 'Blockchain', 'Cryptocurrency'],
     category: 'Backend',
     year: '2025',
-    link: 'https://bitkoin-blockchain-py.up.railway.app',
+    link: 'https://python-bitkoin-blockchain.onrender.com',
   },
   {
     id: 4,

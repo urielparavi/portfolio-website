@@ -168,7 +168,7 @@ export default function AboutPage() {
               <FadeIn>
                 <div>
                   <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                    היי, אני אוריאל – בונה אתרים לעסקים 👋
+                    היי 👋 אני אוריאל – בונה אתרים לעסקים
                   </h1>
                   <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                     <p>
