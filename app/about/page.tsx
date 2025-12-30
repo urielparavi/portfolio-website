@@ -180,9 +180,9 @@ export default function AboutPage() {
                       web מתקדמות.
                     </p>
                     <p>
-                      מתמחה ב-React, Next.js, Node.js ופיתוח AI - מאתרי נחיתה
-                      ועד מערכות E-commerce מורכבות, צ'אטבוטים חכמים ופתרונות
-                      Blockchain.
+                      מתמחה ב-JavaScript, TypeScript, React, Next.js, Node.js
+                      ופיתוח AI – מאתרי נחיתה ועד מערכות E-commerce מורכבות,
+                      צ'אטבוטים חכמים ופתרונות Blockchain.
                     </p>
                     <p>
                       הגישה שלי: קוד נקי,{' '}
