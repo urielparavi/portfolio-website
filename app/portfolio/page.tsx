@@ -85,14 +85,14 @@ const projects = [
   },
   {
     id: 7,
-    image: '/projects/natours.jpg',
-    title: 'Natours - אתר הזמנת טיולים',
+    image: '/projects/tic-tac-toe.jpg',
+    title: 'Tic-Tac-Toe - איקס עיגול',
     description:
-      'אתר הזמנת טיולים מעוצב להפליא הבנוי עם טכנולוגיות frontend מודרניות, עם דגש על חוויית משתמש ועיצוב רספונסיבי.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+      'Tic-Tac-Toe הוא משחק אסטרטגי אינטראקטיבי, נבנה באמצעות React ו‑Vite כ‑SPA לחוויית משתמש חלקה ומרגשת בעיצוב מודרני.',
+    technologies: ['React', 'JavaScript', 'Vite', 'SPA', 'Modern UI'],
     category: 'Frontend',
     year: '2023',
-    link: 'https://natours-appnour.onrender.com',
+    link: 'https://updated-tic-tac-toe.netlify.app',
   },
   {
     id: 8,
