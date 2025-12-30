@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
+import * as React from 'react';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { Button } from '@/components/ui/button';
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -26,11 +26,11 @@ export function ThemeToggle() {
     <Button
       variant="ghost"
       size="icon"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      aria-label={theme === "dark" ? "החלף למצב בהיר" : "החלף למצב כהה"}
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      aria-label={theme === 'dark' ? 'החלף למצב בהיר' : 'החלף למצב כהה'}
       className="hover-lift"
     >
-      {theme === "dark" ? (
+      {theme === 'dark' ? (
         <Sun className="h-5 w-5 transition-transform duration-300 rotate-0 scale-100" />
       ) : (
         <Moon className="h-5 w-5 transition-transform duration-300 rotate-0 scale-100" />
