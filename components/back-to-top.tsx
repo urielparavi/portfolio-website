@@ -34,8 +34,7 @@ export function BackToTop() {
         <Button
           onClick={scrollToTop}
           size="icon"
-          className="fixed bottom-28 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover-lift animate-in fade-in slide-in-from-bottom-5"
-          style={{ left: 'calc(32px + 8px)' }}
+          className="fixed right-[2.125rem] bottom-[184px] z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover-lift animate-in fade-in slide-in-from-bottom-5"
           aria-label="חזור למעלה"
         >
           <ArrowUp className="h-5 w-5" />

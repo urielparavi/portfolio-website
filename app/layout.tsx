@@ -9,10 +9,10 @@ import { PageLoadingIndicator } from '@/components/page-loading-indicator';
 import { Toaster } from '@/components/toaster';
 import { CountdownBanner } from '@/components/countdown-banner';
 import { WhatsAppButton } from '@/components/whatsapp-button';
-import { TawkChat } from '@/components/tawk-chat';
 import { CookieBanner } from '@/components/cookie-banner';
 import { SkipToMain } from '@/components/skip-to-main';
 import { FloatingAccessibilityButton } from '@/components/floating-accessibility-button';
+import { AIChat } from '@/components/ai-chat';
 
 const heebo = Heebo({
   subsets: ['hebrew', 'latin'],
@@ -112,7 +112,7 @@ export default function RootLayout({
 
           {children}
 
-          <TawkChat />
+          <AIChat />
           <BackToTop />
           <WhatsAppButton />
           <CookieBanner />
