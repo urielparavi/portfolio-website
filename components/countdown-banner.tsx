@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { X, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -12,7 +13,13 @@ interface TimeLeft {
   seconds: number;
 }
 
+const HIDDEN_PATHS = ['/privacy-policy', '/terms-of-service', '/accessibility'];
+
 export function CountdownBanner() {
+  const pathname = usePathname();
+
+  const shouldHide = HIDDEN_PATHS.some((path) => pathname.startsWith(path));
+
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
@@ -24,12 +31,9 @@ export function CountdownBanner() {
     setIsMounted(true);
 
     const calculateTimeLeft = (): TimeLeft | null => {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
+      const difference = targetDate - Date.now();
 
-      if (difference <= 0) {
-        return null;
-      }
+      if (difference <= 0) return null;
 
       return {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -44,18 +48,11 @@ export function CountdownBanner() {
     const timer = setInterval(() => {
       const newTimeLeft = calculateTimeLeft();
       setTimeLeft(newTimeLeft);
-
-      if (!newTimeLeft) {
-        setIsVisible(false);
-      }
+      if (!newTimeLeft) setIsVisible(false);
     }, 1000);
 
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -66,13 +63,10 @@ export function CountdownBanner() {
     };
   }, [targetDate]);
 
-  if (!isMounted || !isVisible || !timeLeft || isScrolled) {
+  // תנאי יחיד - נקי וברור
+  if (!isMounted || !isVisible || !timeLeft || isScrolled || shouldHide) {
     return null;
   }
-
-  const handleClose = () => {
-    setIsVisible(false);
-  };
 
   return (
     <div
@@ -119,7 +113,7 @@ export function CountdownBanner() {
       </div>
 
       <button
-        onClick={handleClose}
+        onClick={() => setIsVisible(false)}
         className="absolute top-2 left-2 z-20 p-1 rounded-full hover:bg-white/20 transition-colors"
         aria-label="סגור באנר"
       >
