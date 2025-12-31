@@ -337,7 +337,7 @@ export function AIChat() {
                 דוגמאות:
               </p>
               <div className="flex gap-1.5 sm:gap-2 flex-wrap">
-                {['מה המחיר?', 'כמה זמן לוקח?', 'הראה עבודות'].map(
+                {['מה המחיר?', 'כמה זמן לוקח?', 'איפה יוצרים קשר?'].map(
                   (quickMsg) => (
                     <button
                       key={quickMsg}
@@ -358,24 +358,18 @@ export function AIChat() {
         </div>
       )}
 
-      {/* Clear History Modal - CSS only animations */}
+      {/* Clear History Modal - Smooth animations */}
       {showClearModal && (
         <>
-          {/* Backdrop */}
+          {/* Backdrop - Smooth fade in */}
           <div
-            className="fixed inset-0 bg-black/50 z-[60] transition-opacity duration-200"
+            className="fixed inset-0 bg-black/50 z-[60] animate-fade-in"
             onClick={() => setShowClearModal(false)}
-            style={{
-              animation: 'fadeIn 0.2s ease-out',
-            }}
           />
 
-          {/* Modal */}
+          {/* Modal - Smooth scale + fade */}
           <div
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-card border border-border rounded-2xl shadow-strong p-4 sm:p-6 z-[70]"
-            style={{
-              animation: 'fadeInUp 0.3s ease-out',
-            }}
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-card border border-border rounded-2xl shadow-strong p-4 sm:p-6 z-[70] animate-modal-scale"
             role="dialog"
             aria-modal="true"
             aria-labelledby="clear-modal-title"
