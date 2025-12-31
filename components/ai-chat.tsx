@@ -337,7 +337,7 @@ export function AIChat() {
                 דוגמאות:
               </p>
               <div className="flex gap-1.5 sm:gap-2 flex-wrap">
-                {['מה המחיר?', 'כמה זמן לוקח?', 'הראה עבודות'].map(
+                {['מה המחיר?', 'כמה זמן לוקח?', 'איפה יוצרים קשר?'].map(
                   (quickMsg) => (
                     <button
                       key={quickMsg}

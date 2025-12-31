@@ -5,7 +5,7 @@ import { Shield, Lock, Eye, UserCheck, FileText, Globe } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'מדיניות פרטיות | Weby – אוריאל בניית אתרים',
   description:
-    'מדיניות הפרטיות של Weby: כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלך. שקיפות מלאה והגנה על הפרטיות שלך.',
+    "מדיניות הפרטיות של Weby: כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלך, כולל שימוש בצ'אט AI חדש. שקיפות מלאה והגנה על הפרטיות שלך.",
   robots: {
     index: true,
     follow: true,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'מדיניות פרטיות | Weby',
     description:
-      'מדיניות הפרטיות של Weby: איסוף מידע, שימוש, אבטחה ושמירה על הפרטיות שלך',
+      "מדיניות הפרטיות של Weby: איסוף מידע, שימוש, אבטחה ושמירה על הפרטיות שלך, כולל שימוש בצ'אט AI מבוסס OpenAI.",
     type: 'website',
     locale: 'he_IL',
   },
@@ -32,11 +32,11 @@ export default function PrivacyPolicyPage() {
             <h1 className="text-4xl md:text-5xl font-bold">מדיניות פרטיות</h1>
             <p className="text-lg text-muted-foreground">
               אנו מחויבים לשקיפות מלאה ולשמירה על המידע האישי שלך בכל פעולה
-              באתר, ופועלים בהתאם לחוקי הגנת הפרטיות המקומיים והבינלאומיים (כולל
-              GDPR).
+              באתר, כולל בצ\'אט AI החדש שלנו, ופועלים בהתאם לחוקי הגנת הפרטיות
+              המקומיים והבינלאומיים (כולל GDPR).
             </p>
             <p className="text-sm text-muted-foreground">
-              עדכון אחרון: דצמבר 2024
+              עדכון אחרון: דצמבר 2025
             </p>
           </div>
         </div>
@@ -50,10 +50,11 @@ export default function PrivacyPolicyPage() {
             <div className="prose prose-lg max-w-none mb-12">
               <div className="p-6 rounded-xl bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20">
                 <p className="text-foreground/90 leading-relaxed m-0">
-                  ברוכים הבאים לאתר של אוריאל - בניית אתרים. מדיניות פרטיות זו
-                  מסבירה כיצד אנו אוספים, משתמשים, משתפים ומגנים על המידע האישי
-                  שלך. השימוש באתר מהווה הסכמה למדיניות זו. כל טיפול במידע אישי
-                  נעשה בהתאם להוראות החוק ולבסיס חוקי מתאים.
+                  ברוכים הבאים לאתר Weby - בניית אתרים. מדיניות פרטיות זו מסבירה
+                  כיצד אנו אוספים, משתמשים, משתפים ומגנים על המידע האישי שלך,
+                  כולל המידע שנאסף דרך הצ'אט AI שלנו. השימוש באתר או בצ'אט מהווה
+                  הסכמה למדיניות זו. כל טיפול במידע אישי נעשה בהתאם להוראות החוק
+                  ולבסיס חוקי מתאים.
                 </p>
               </div>
             </div>
@@ -78,8 +79,8 @@ export default function PrivacyPolicyPage() {
                     <ul className="space-y-2 text-muted-foreground">
                       <li>• טפסי יצירת קשר: שם, אימייל, טלפון, תוכן ההודעה</li>
                       <li>
-                        • צ'אט חי (Tawk.to, WhatsApp או מערכות אחרות): תוכן
-                        השיחה ושם אם נמסר
+                        • צ'אט AI באתר: תוכן השיחות שאתה מנהל עם העוזר, שמות או
+                        פרטים אם נמסרו
                       </li>
                       <li>
                         • מידע שניתן בעת הרשמה, פניות, הרשמות לניוזלטר או שימוש
@@ -94,7 +95,8 @@ export default function PrivacyPolicyPage() {
                     </h3>
                     <ul className="space-y-2 text-muted-foreground">
                       <li>
-                        • כתובת IP לצורכי אבטחה, מניעת הונאות וניתוח תעבורה
+                        • כתובת IP לצורכי אבטחה, מניעת הונאות, ניתוח תעבורה
+                        וניהול קצב שימוש (rate limiting)
                       </li>
                       <li>
                         • מידע על המכשיר והדפדפן: סוג דפדפן, מערכת הפעלה,
@@ -136,8 +138,8 @@ export default function PrivacyPolicyPage() {
                   </div>
                   <div className="p-4 rounded-lg bg-muted/30 border-r-4 border-primary/50">
                     <p className="text-foreground/90">
-                      ✓ ניתוח ושיפור השירות: הבנה של התנהגות המשתמשים באתר כדי
-                      לשפר חוויית המשתמש.
+                      ✓ ניתוח ושיפור השירות: הבנה של התנהגות המשתמשים באתר
+                      ובצ'אט AI כדי לשפר חוויית המשתמש.
                     </p>
                   </div>
                   <div className="p-4 rounded-lg bg-muted/30 border-r-4 border-primary/50">
@@ -170,31 +172,56 @@ export default function PrivacyPolicyPage() {
                 </div>
                 <div className="pr-15 space-y-4">
                   <p className="text-muted-foreground">
-                    אנו עשויים להשתמש בשירותי צד שלישי מהימנים (למשל, צ'אט,
-                    ניתוח תעבורה, אחסון ושירותי API נוספים) כדי לשפר את השירות.
-                    שירותים אלו עשויים לאסוף מידע עליך בהתאם למדיניות הפרטיות
-                    שלהם, ואנו לא אחראים למידע שנאסף או מנוהל על ידם.
+                    אנו עשויים להשתמש בשירותי צד שלישי מהימנים, כולל אחסון,
+                    ניתוח תעבורה, API ושירותי צ'אט מבוססי AI. שירותים אלו עשויים
+                    לאסוף מידע עליך בהתאם למדיניות הפרטיות שלהם, ואנו לא אחראים
+                    למידע שנאסף או מנוהל על ידם.
                   </p>
 
                   <div className="grid gap-4">
-                    <div className="p-6 rounded-lg bg-gradient-to-r from-blue-500/5 to-blue-500/10 border border-blue-500/20">
+                    <div className="p-6 rounded-lg bg-gradient-to-r from-purple-500/5 to-purple-500/10 border border-purple-500/20">
                       <h3 className="text-lg font-semibold mb-2">
-                        Tawk.to - צ'אט חי
+                        Vercel - אחסון
                       </h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        פלטפורמת צ'אט לתמיכה בזמן אמת
+                        פלטפורמת האחסון של האתר
                       </p>
                       <ul className="text-sm text-muted-foreground space-y-1">
-                        <li>• נאסף: IP, תוכן שיחה, דפדפן</li>
+                        <li>• נאסף: Logs, IP, ביצועים</li>
                         <li>
                           • מדיניות:{' '}
                           <a
-                            href="https://www.tawk.to/privacy-policy/"
+                            href="https://vercel.com/legal/privacy-policy"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-primary hover:underline"
                           >
-                            Tawk.to Privacy Policy
+                            Vercel Privacy Policy
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="p-6 rounded-lg bg-gradient-to-r from-blue-500/5 to-blue-500/10 border border-blue-500/20">
+                      <h3 className="text-lg font-semibold mb-2">
+                        AI Chat - OpenAI
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        מערכת צ'אט מבוססת AI לשירות ותמיכה
+                      </p>
+                      <ul className="text-sm text-muted-foreground space-y-1">
+                        <li>
+                          • נאסף: תוכן שיחה, תאריך ושעה, כתובת IP (לניהול אבטחה)
+                        </li>
+                        <li>
+                          • מדיניות:{' '}
+                          <a
+                            href="https://openai.com/privacy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline"
+                          >
+                            OpenAI Privacy Policy
                           </a>
                         </li>
                       </ul>
@@ -218,29 +245,6 @@ export default function PrivacyPolicyPage() {
                             className="text-primary hover:underline"
                           >
                             Google Privacy Policy
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="p-6 rounded-lg bg-gradient-to-r from-purple-500/5 to-purple-500/10 border border-purple-500/20">
-                      <h3 className="text-lg font-semibold mb-2">
-                        Vercel - אחסון
-                      </h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        פלטפורמת האחסון של האתר
-                      </p>
-                      <ul className="text-sm text-muted-foreground space-y-1">
-                        <li>• נאסף: Logs, IP, ביצועים</li>
-                        <li>
-                          • מדיניות:{' '}
-                          <a
-                            href="https://vercel.com/legal/privacy-policy"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary hover:underline"
-                          >
-                            Vercel Privacy Policy
                           </a>
                         </li>
                       </ul>

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export default function AccessibilityStatement() {
-  const lastUpdated = 'דצמבר 2024';
+  const lastUpdated = 'דצמבר 2025';
   const contactEmail = 'urielpa308@gmail.com';
   const contactPhone = '054-680-3661';
   const companyName = 'Weby בניית אתרים';
