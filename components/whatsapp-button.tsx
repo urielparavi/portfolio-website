@@ -1,14 +1,35 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { MessageCircle } from 'lucide-react';
 
 export function WhatsAppButton() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  useEffect(() => {
+    const checkChatState = () => {
+      const chatOpen = document.body.getAttribute('data-chat-open') === 'true';
+      setIsChatOpen(chatOpen);
+    };
+
+    checkChatState();
+    const observer = new MutationObserver(checkChatState);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['data-chat-open'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const phoneNumber = '972546803661';
   const message = 'שלום! אשמח לקבל מידע נוסף';
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
   )}`;
+
+  if (isChatOpen) return null;
 
   return (
     <a
