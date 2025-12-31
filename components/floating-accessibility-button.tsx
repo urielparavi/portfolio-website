@@ -1,12 +1,31 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Accessibility } from 'lucide-react';
 import { AccessibilityMenu } from './accessibility-menu';
 
 export function FloatingAccessibilityButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const checkChatState = () => {
+      const chatOpen = document.body.getAttribute('data-chat-open') === 'true';
+      setIsChatOpen(chatOpen);
+    };
+
+    checkChatState();
+    const observer = new MutationObserver(checkChatState);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['data-chat-open'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  if (isChatOpen) return null;
 
   return (
     <>

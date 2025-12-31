@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 
 export function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -16,9 +17,24 @@ export function BackToTop() {
       }
     };
 
+    const checkChatState = () => {
+      const chatOpen = document.body.getAttribute('data-chat-open') === 'true';
+      setIsChatOpen(chatOpen);
+    };
+
     window.addEventListener('scroll', toggleVisibility);
 
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    checkChatState();
+    const observer = new MutationObserver(checkChatState);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['data-chat-open'],
+    });
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+      observer.disconnect();
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -27,6 +43,8 @@ export function BackToTop() {
       behavior: 'smooth',
     });
   };
+
+  if (isChatOpen) return null;
 
   return (
     <>

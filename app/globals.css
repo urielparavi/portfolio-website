@@ -53,18 +53,23 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-background text-foreground;
     direction: rtl;
   }
 
   /* Enhanced Typography */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold;
     letter-spacing: -0.02em;
   }
@@ -94,15 +99,15 @@
   .hover-lift {
     @apply transition-all duration-300 ease-out;
   }
-  
+
   .hover-lift:hover {
     @apply -translate-y-1;
   }
-  
+
   .hover-glow {
     @apply transition-shadow duration-300;
   }
-  
+
   .hover-glow:hover {
     @apply shadow-lg shadow-primary/20;
   }
@@ -226,5 +231,19 @@
     );
     background-size: 1000px 100%;
     animation: shimmer 2s infinite linear;
+  }
+
+  /* Fade in animation for modal backdrop */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
   }
 }
