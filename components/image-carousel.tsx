@@ -130,7 +130,7 @@ export function ImageCarousel() {
     <section className="py-12 md:py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          פרויקטים נבחרים
+          פרויקטים לדוגמה
         </h2>
 
         <div
@@ -141,8 +141,8 @@ export function ImageCarousel() {
           <link rel="preload" as="image" href={projects[nextIndex].image} />
 
           {/* Main carousel card - using theme primary */}
-          <div className="relative p-1 rounded-2xl bg-gradient-to-r from-primary/90 via-primary to-primary/90 shadow-2xl shadow-primary/20 transition-shadow duration-300 hover:shadow-3xl hover:shadow-primary/30">
-            <div className="relative aspect-video rounded-xl overflow-hidden bg-card">
+          <div className="relative rounded-2xl ring-2 ring-primary/40 shadow-2xl shadow-primary/10 hover:ring-primary/70 hover:shadow-3xl hover:shadow-primary/20 transition-all duration-300 overflow-hidden">
+            <div className="relative aspect-video bg-card">
               {/* Badge - theme primary gradient */}
               <div className="absolute top-4 left-4 z-10 px-4 py-2 rounded-full bg-gradient-to-r from-primary/90 via-primary to-primary/90 text-primary-foreground shadow-xl flex items-center gap-2 text-sm font-bold">
                 <Sparkles className="h-4 w-4" />

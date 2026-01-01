@@ -82,7 +82,7 @@ export function CountdownBanner() {
           <div className="flex items-center gap-2">
             <Clock className="h-5 w-5 animate-pulse" />
             <span className="text-sm md:text-base font-bold">
-              🎁 הטבה מיוחדת למזמינים עכשיו – אל תחמיצו!
+              🎁 הטבה מיוחדת בזמן הקרוב – אל תחמיצו!
             </span>
           </div>
 

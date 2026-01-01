@@ -92,7 +92,13 @@ const technologies = [
   },
 ];
 
-function TechCard({ tech, index }: { tech: typeof technologies[0]; index: number }) {
+function TechCard({
+  tech,
+  index,
+}: {
+  tech: (typeof technologies)[0];
+  index: number;
+}) {
   const [isVisible, setIsVisible] = useState(false);
   const [animatedLevel, setAnimatedLevel] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -108,7 +114,7 @@ function TechCard({ tech, index }: { tech: typeof technologies[0]; index: number
             let start = 0;
             const duration = 1000;
             const increment = tech.level / (duration / 16);
-            
+
             const timer = setInterval(() => {
               start += increment;
               if (start >= tech.level) {
@@ -143,11 +149,11 @@ function TechCard({ tech, index }: { tech: typeof technologies[0]; index: number
           >
             <Icon className="h-8 w-8 text-white" strokeWidth={1.5} />
           </div>
-          
+
           <span className="text-sm font-medium text-center px-2">
             {tech.name}
           </span>
-          
+
           {/* Progress bar עם מספר */}
           <div className="w-full px-2 space-y-1">
             <div className="flex items-center justify-between">
@@ -198,7 +204,7 @@ export function TechStackWithNumbers() {
         <FadeIn delay={400}>
           <div className="mt-16 text-center">
             <p className="text-sm text-muted-foreground">
-              ועוד טכנולוגיות רבות נוספות לפי צרכי הפרויקט
+              ועוד טכנולוגיות רבות נוספות לפי צרכי פרויקט
             </p>
           </div>
         </FadeIn>

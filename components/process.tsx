@@ -1,36 +1,47 @@
-import { MessageCircle, Palette, Code, Rocket, CheckCircle2 } from "lucide-react";
-import { FadeIn } from "@/components/fade-in";
+import {
+  MessageCircle,
+  Palette,
+  Code,
+  Rocket,
+  CheckCircle2,
+} from 'lucide-react';
+import { FadeIn } from '@/components/fade-in';
 
 const steps = [
   {
     number: 1,
     icon: MessageCircle,
-    title: "פגישת היכרות",
-    description: "נפגשים להבנת הצרכים, היעדים, והחזון שלך. אני שואל הרבה שאלות כדי להבין בדיוק מה אתה צריך.",
+    title: 'פגישת היכרות',
+    description:
+      'נפגשים להבנת הצרכים, היעדים, והחזון שלך. אני שואל שאלות כדי להבין בדיוק מה אתה צריך.',
   },
   {
     number: 2,
     icon: Palette,
-    title: "עיצוב והצעה",
-    description: "יוצר הצעת מחיר מפורטת ועיצוב ראשוני. אנחנו מתאמים ציפיות, לוחות זמנים, ומאשרים את הכיוון העיצובי.",
+    title: 'עיצוב והצעה',
+    description:
+      'יוצר הצעת מחיר מפורטת ועיצוב ראשוני. אנחנו מתאמים ציפיות, לוחות זמנים, ומאשרים את הכיוון העיצובי.',
   },
   {
     number: 3,
     icon: Code,
-    title: "פיתוח",
-    description: "בונה את האתר שלך עם קוד נקי ומקצועי. מעדכן אותך לאורך הדרך ומקבל משוב בנקודות ציון חשובות.",
+    title: 'פיתוח',
+    description:
+      'בונה את האתר שלך עם קוד נקי ומקצועי. מעדכן אותך לאורך הדרך ומקבל משוב בנקודות ציון חשובות.',
   },
   {
     number: 4,
     icon: CheckCircle2,
-    title: "בדיקות ואישור",
-    description: "בודק את האתר לעומק - ביצועים, נייד, דפדפנים שונים. אתה מקבל גישה לבדיקה ואנחנו מבצעים תיקונים אחרונים.",
+    title: 'בדיקות ואישור',
+    description:
+      'בודק את האתר לעומק - ביצועים, נייד, דפדפנים שונים. אתה מקבל גישה לבדיקה ואנחנו מבצעים תיקונים אחרונים.',
   },
   {
     number: 5,
     icon: Rocket,
-    title: "השקה ותמיכה",
-    description: "משיקים את האתר לאוויר! מספק לך הדרכה, תיעוד, ו-30 יום של תמיכה מלאה. האתר שלך מוכן לעבודה!",
+    title: 'השקה ותמיכה',
+    description:
+      'משיקים את האתר לאוויר! מספק לך הדרכה, תיעוד, ו-30 יום של תמיכה מלאה. האתר שלך מוכן לעבודה!',
   },
 ];
 
@@ -39,7 +50,7 @@ export function Process() {
     <section className="py-20 relative overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-t from-muted/50 to-background -z-10" />
-      
+
       <div className="container mx-auto px-4">
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center mb-16">

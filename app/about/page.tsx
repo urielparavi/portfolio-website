@@ -22,9 +22,9 @@ import Link from 'next/link';
 import { FadeIn } from '@/components/fade-in';
 
 export const metadata: Metadata = {
-  title: 'אודות | Weby – אוריאל בניית אתרים לעסקים',
+  title: 'אודות | Weby – אוריאל בניית אתרים',
   description:
-    'אוריאל – בונה אתרים לעסקים עם ניסיון של מעל 6 שנים. מתמחה בבניית אתרי תדמית, אתרי נחיתה וחנויות אונליין בטכנולוגיות מודרניות.',
+    'אוריאל – בונה אתרים עם ניסיון של מעל 6 שנים. מתמחה בבניית אתרי תדמית, אתרי נחיתה וחנויות אונליין בטכנולוגיות מודרניות.',
   robots: {
     index: true,
     follow: true,
@@ -163,47 +163,77 @@ export default function AboutPage() {
       <Navbar />
       <main className="min-h-screen py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto mb-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Hero Section - משודרג */}
+          <div className="max-w-6xl mx-auto mb-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               <FadeIn>
-                <div>
-                  <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                    היי 👋 אני אוריאל – בונה אתרים לעסקים
+                <div className="space-y-6">
+                  <span className="block text-xl font-medium text-muted-foreground mb-4">
+                    שלום 👋 אז.. אני אוריאל
+                  </span>
+                  <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                    מפתח{' '}
+                    <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                      Full Stack
+                    </span>
+                    <br />
+                    בהתמחות Web
                   </h1>
-                  <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-                    <p>
-                      אני מפתח{' '}
-                      <span className="font-semibold text-foreground">
-                        Full Stack
+
+                  <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-xl">
+                      למעלה מ-
+                      <span className="font-bold text-foreground">
+                        6 שנות ניסיון
                       </span>{' '}
-                      עם למעלה מ-6 שנות ניסיון בפיתוח תוכנה, אתרים ואפליקציות
-                      web מתקדמות.
+                      בפיתוח תוכנה, אתרים ואפליקציות web מתקדמות.
                     </p>
+
                     <p>
-                      מתמחה ב-JavaScript, TypeScript, React, Next.js, Node.js
-                      ופיתוח AI – מאתרי נחיתה ועד מערכות E-commerce מורכבות,
-                      צ'אטבוטים חכמים ופתרונות Blockchain.
+                      המסע שלי התחיל ב-2018, והעמקתי את ההכשרה במכללת HackerU.
+                      הרחבתי את הידע במגוון טכנולוגיות – מאתרי תדמית ונחיתה, דרך
+                      E-commerce, ועד אפליקציות מורכבות עם צ'אטבוטים חכמים ו-AI.
                     </p>
-                    <p>
-                      הגישה שלי: קוד נקי,{' '}
-                      <span className="font-semibold text-foreground">
-                        ביצועים מהירים
-                      </span>
-                      , וחווית משתמש שמביאה תוצאות אמיתיות.
+
+                    <p className="font-medium text-foreground">
+                      הגישה שלי: שקיפות מלאה, עדכונים שוטפים, ועבודה משותפת צעד
+                      אחר צעד להפיכת הרעיון שלכם למציאות שתוכלו להתגאות בה.
                     </p>
+                  </div>
+
+                  <div className="flex gap-4 pt-4">
+                    <Button
+                      asChild
+                      size="lg"
+                      className="hover-lift shadow-soft"
+                    >
+                      <Link href="/contact">
+                        בואו נדבר
+                        <ArrowLeft className="mr-2 h-5 w-5" />
+                      </Link>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="hover-lift"
+                    >
+                      <Link href="/portfolio">הפרויקטים שלי</Link>
+                    </Button>
                   </div>
                 </div>
               </FadeIn>
 
               <FadeIn delay={100} direction="left">
-                <div className="aspect-square rounded-2xl p-1 bg-gradient-to-br from-blue-500 via-blue-300 to-blue-100 shadow-strong hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <div className="w-full h-full rounded-xl overflow-hidden">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 rounded-3xl opacity-75 group-hover:opacity-100 blur-xl transition duration-500"></div>
+                  <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                     <Image
                       src="/profile.jpg"
                       alt="אוריאל - מפתח Full Stack"
                       width={600}
                       height={600}
-                      className="object-cover object-[center_20%] w-full h-full"
+                      className="object-cover object-[center_20%] w-full h-full transition-transform duration-500 group-hover:scale-105"
                       priority
                     />
                   </div>
