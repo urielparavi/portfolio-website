@@ -1,26 +1,27 @@
-import { Check, Zap, Shield, Headphones } from "lucide-react";
-import { FadeIn } from "@/components/fade-in";
+import { Check, Zap, Shield, Headphones } from 'lucide-react';
+import { FadeIn } from '@/components/fade-in';
 
 const reasons = [
   {
     icon: Zap,
-    title: "ביצועים מהירים",
-    description: "אתרים מהירים וממוטבים שנטענים בשניות ומספקים חוויית משתמש מעולה",
+    title: 'ביצועים מהירים',
+    description:
+      'אתרים מהירים וממוטבים שנטענים בשניות ומספקים חוויית משתמש מעולה',
   },
   {
     icon: Shield,
-    title: "אבטחה ואמינות",
-    description: "קוד נקי ומאובטח עם best practices מהתעשייה",
+    title: 'אבטחה ואמינות',
+    description: 'קוד נקי ומאובטח עם best practices מהתעשייה',
   },
   {
     icon: Check,
-    title: "עיצוב מותאם אישית",
-    description: "כל פרויקט מעוצב במיוחד בהתאם לצרכים ולמותג שלך",
+    title: 'עיצוב מותאם אישית',
+    description: 'כל פרויקט מעוצב במיוחד בהתאם לצרכים ולמותג שלך',
   },
   {
     icon: Headphones,
-    title: "תמיכה מלאה",
-    description: "זמינות ותמיכה טכנית לאורך כל הדרך ואחרי השקה",
+    title: 'תמיכה מלאה',
+    description: 'זמינות ותמיכה טכנית לאורך כל הדרך ואחרי השקה',
   },
 ];
 
@@ -34,7 +35,8 @@ export function WhyChooseMe() {
               למה לבחור בי?
             </h2>
             <p className="text-lg text-muted-foreground">
-              אני משלב ניסיון טכני עם תשומת לב לפרטים כדי לספק אתרים שמביאים תוצאות
+              אני משלב ידע וניסיון טכני עם תשומת לב לפרטים, והכי חשוב – מתמקד
+              במה שאתה באמת צריך כדי לקבל תוצאות.
             </p>
           </div>
         </FadeIn>

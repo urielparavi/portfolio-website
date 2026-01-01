@@ -69,7 +69,7 @@ const projects = [
       'עיין במבצעים בלעדיים והגעות אחרונות. חווית קנייה חלקה ואמינה עם מוצרים איכותיים המיועדים לנוחות וסטייל.',
     technologies: ['React', 'E-commerce', 'UI/UX'],
     category: 'Frontend',
-    year: '2024',
+    year: '2025',
     link: 'https://my-store-ts-cleaned.vercel.app',
   },
   {
@@ -80,7 +80,7 @@ const projects = [
       'בלוג אישי מודרני להצגת פרויקטים, עם פוסטים דינמיים, עמודי תוכן נפרדים וטופס יצירת קשר מובנה.',
     technologies: ['Next.js', 'React', 'Dynamic Routing', 'Blog', 'Email Form'],
     category: 'Full Stack',
-    year: '2024',
+    year: '2025',
     link: 'https://next-js-posts-site.vercel.app',
   },
   {
@@ -91,7 +91,7 @@ const projects = [
       'Tic-Tac-Toe הוא משחק אסטרטגי אינטראקטיבי, נבנה באמצעות React ו‑Vite כ‑SPA לחוויית משתמש חלקה ומרגשת בעיצוב מודרני.',
     technologies: ['React', 'JavaScript', 'Vite', 'SPA', 'Modern UI'],
     category: 'Frontend',
-    year: '2023',
+    year: '2024',
     link: 'https://updated-tic-tac-toe.netlify.app',
   },
   {
@@ -102,7 +102,7 @@ const projects = [
       'אפליקציה לניהול וארגון חיפוש עבודה, מסייעת למשתמשים לארגן את חיפוש העבודה ביעילות עם דשבורד נקי ויכולות חזקות.',
     technologies: ['React', 'Dashboard', 'Job Tracking'],
     category: 'Full Stack',
-    year: '2022',
+    year: '2024',
     link: 'https://jobify-update-v2-reactquery.onrender.com',
   },
   {
@@ -113,7 +113,7 @@ const projects = [
       'תבנית חנות אונליין אלגנטית להצגת ומכירת נעליים, עם עיצוב מודרני, חוויית משתמש נוחה וניווט ברור, המותאמת לגלישה מושלמת במחשב ובמובייל.',
     technologies: ['Tailwind CSS', 'Template', 'E-commerce'],
     category: 'Frontend',
-    year: '2021',
+    year: '2024',
     link: 'https://tailwind-shoes-cleaned.vercel.app',
   },
 ];
@@ -152,7 +152,8 @@ export default function PortfolioPage() {
                 מבין הפרויקטים שבניתי
               </h1>
               <p className="text-lg text-muted-foreground text-balance">
-                מבחר פרויקטים שבניתי - מאתרי נחיתה ועד מערכות מתקדמות
+                פרויקטים שבניתי לאחרונה – מאתרי נחיתה פשוטים ועד פתרונות
+                דיגיטליים מתקדמים ומורכבים.
               </p>
             </div>
           </FadeIn>

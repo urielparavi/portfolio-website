@@ -14,14 +14,15 @@ export function HeroSection() {
           <FadeIn delay={100}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               פיתוח אתרים מותאם אישית
-              <span className="block mt-2 gradient-text">לעסק שלך</span>
+              <span className="block mt-2 gradient-text">לצרכים שלך!</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={200}>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              בונה אתרים מקצועיים ומודרניים עם טכנולוגיות מתקדמות. מאתרי נחיתה
-              ועד חנויות מקוונות מלאות.
+              אני אוריאל – מפתח תוכנה עם התמחות באפליקציות ואתרים מקצועיים
+              ומודרניים. בין אם מדובר באתר אישי, בלוג, תיק עבודות או חנות מקוונת
+              – אני כאן כדי לעזור לך להביא את הרעיון שלך לחיים.
             </p>
           </FadeIn>
 

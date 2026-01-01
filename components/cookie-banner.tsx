@@ -47,8 +47,9 @@ export function CookieBanner() {
                 {/* Text */}
                 <div className="flex-1">
                   <p className="text-sm text-foreground/90 leading-relaxed">
-                    אנחנו משתמשים ב-Cookies ושירותי צד שלישי (Tawk.to, Google
-                    Analytics) לשיפור חוויית המשתמש וניתוח תעבורה.{' '}
+                    אנחנו משתמשים ב-Cookies ושירותי צד שלישי לצורך שיפור חוויית
+                    המשתמש, ניתוח תעבורה, התאמה אישית של תוכן ותפעול פונקציות
+                    נוספות באתר. למידע נוסף{' '}
                     <Link
                       href="/privacy-policy"
                       className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors font-medium"
