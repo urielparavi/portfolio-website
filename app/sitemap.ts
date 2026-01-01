@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.uriel-sites.com';
+  const baseUrl = 'https://uriel-sites.com';
 
   return [
     {
