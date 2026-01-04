@@ -19,39 +19,23 @@ import { FadeIn } from '@/components/fade-in';
 const projects = [
   {
     id: 1,
-    image: '/projects/ai-chatbot.jpg',
-    title: "RAG Chatbot - צ'אטבוט AI חכם עם חיפוש סמנטי",
+    image: '/projects/fitforge.jpg',
+    title: 'FitForge - דף נחיתה למאמן כושר',
     description:
-      "מערכת צ'אטבוט מתקדמת המבצעת חיפוש סמנטי במסמכים שהועלו על ידי המשתמש, משלבת AI עם טכנולוגיות Web מודרניות.",
-    technologies: ['Next.js', 'TypeScript', 'AI', 'OpenAI SDK', 'RAG'],
-    category: 'Full Stack',
+      'דף נחיתה מקצועי ואנרגטי למאמן כושר המציע שילוב ייחודי של אימוני כוח בחדר הכושר וקליסטניקס. כולל סקשנים מלאים: Hero, שירותים, מחירים, המלצות, לפני-אחרי וטופס יצירת קשר עם מודל מעוצב.',
+    technologies: [
+      'Next.js 15',
+      'TypeScript',
+      'Tailwind CSS',
+      'Lucide React',
+      'shadcn/ui',
+    ],
+    category: 'Frontend',
     year: '2025',
-    link: 'https://rag-chatbot-cl.vercel.app',
+    link: 'https://fitforge-app.netlify.app',
   },
   {
     id: 2,
-    image: '/projects/recipe-bot.jpg',
-    title: "מודלה - צ'אטבוט ליצירת מתכונים מותאמים אישית",
-    description:
-      "צ'אטבוט שמספק מתכונים מלאים – כולל מרכיבים, כמויות, שלבי הכנה וזמן הכנה – לכל מנה שתבחר, בצורה אינטראקטיבית ונוחה.",
-    technologies: ['Next.js', 'AI', 'OpenAI SDK', 'Chatbot', 'Recipes'],
-    category: 'Full Stack',
-    year: '2025',
-    link: 'https://recipe-app-modale.vercel.app',
-  },
-  {
-    id: 3,
-    image: '/projects/blockchain.jpg',
-    title: 'Blockchain - רשת דיגיטלית מבוזרת שמבוססת על קריפטוגרפיה',
-    description:
-      'מערכת Blockchain מותאמת אישית עם מטבע קריפטוגרפי, שפותחה מהבסיס וממחישה עבודה עם רשת מבוזרת, אבטחה וניהול עסקאות.',
-    technologies: ['Python', 'Blockchain', 'Cryptocurrency'],
-    category: 'Backend',
-    year: '2025',
-    link: 'https://python-bitkoin-blockchain.onrender.com',
-  },
-  {
-    id: 4,
     image: '/projects/nextcart.jpg',
     title: 'NextCart - פלטפורמת איקומרס',
     description:
@@ -62,7 +46,40 @@ const projects = [
     link: 'https://next-ecommerce-ten-wine.vercel.app',
   },
   {
+    id: 3,
+    image: '/projects/ai-chatbot.jpg',
+    title: "RAG Chatbot - צ'אטבוט AI חכם עם חיפוש סמנטי",
+    description:
+      "מערכת צ'אטבוט מתקדמת המבצעת חיפוש סמנטי במסמכים שהועלו על ידי המשתמש, משלבת AI עם טכנולוגיות Web מודרניות.",
+    technologies: ['Next.js', 'TypeScript', 'AI', 'OpenAI SDK', 'RAG'],
+    category: 'Full Stack',
+    year: '2025',
+    link: 'https://rag-chatbot-cl.vercel.app',
+  },
+  {
+    id: 4,
+    image: '/projects/recipe-bot.jpg',
+    title: "מודלה - צ'אטבוט ליצירת מתכונים מותאמים אישית",
+    description:
+      "צ'אטבוט שמספק מתכונים מלאים – כולל מרכיבים, כמויות, שלבי הכנה וזמן הכנה – לכל מנה שתבחר, בצורה אינטראקטיבית ונוחה.",
+    technologies: ['Next.js', 'AI', 'OpenAI SDK', 'Chatbot', 'Recipes'],
+    category: 'Full Stack',
+    year: '2025',
+    link: 'https://recipe-app-modale.vercel.app',
+  },
+  {
     id: 5,
+    image: '/projects/blockchain.jpg',
+    title: 'Blockchain - רשת דיגיטלית מבוזרת שמבוססת על קריפטוגרפיה',
+    description:
+      'מערכת Blockchain מותאמת אישית עם מטבע קריפטוגרפי, שפותחה מהבסיס וממחישה עבודה עם רשת מבוזרת, אבטחה וניהול עסקאות.',
+    technologies: ['Python', 'Blockchain', 'Cryptocurrency'],
+    category: 'Backend',
+    year: '2025',
+    link: 'https://python-bitkoin-blockchain.onrender.com',
+  },
+  {
+    id: 6,
     image: '/projects/cozy.jpg',
     title: 'Cozy - חנות אונליין מודרנית',
     description:
@@ -73,7 +90,7 @@ const projects = [
     link: 'https://my-store-ts-cleaned.vercel.app',
   },
   {
-    id: 6,
+    id: 7,
     image: '/projects/uriel-blog.jpg',
     title: "Uriel' Blog - בלוג פרויקטים אישי",
     description:
@@ -84,7 +101,7 @@ const projects = [
     link: 'https://next-js-posts-site.vercel.app',
   },
   {
-    id: 7,
+    id: 8,
     image: '/projects/tic-tac-toe.jpg',
     title: 'Tic-Tac-Toe - איקס עיגול',
     description:
@@ -95,7 +112,7 @@ const projects = [
     link: 'https://updated-tic-tac-toe.netlify.app',
   },
   {
-    id: 8,
+    id: 9,
     image: '/projects/jobify.jpg',
     title: 'Jobify - מערכת ניהול חיפוש עבודה',
     description:
@@ -106,7 +123,7 @@ const projects = [
     link: 'https://jobify-update-v2-reactquery.onrender.com',
   },
   {
-    id: 9,
+    id: 10,
     image: '/projects/tailwind-shoes.jpg',
     title: 'Tailwind Shoes - תבנית חנות נעליים',
     description:
